@@ -1,0 +1,29 @@
+{
+  "itemGroup.idlegenerators.tab": "Idle Generators",
+  "hud.idlegenerators.status": "%s | %s/%s | %s%%",
+
+  "block.idlegenerators.cobblestone_generator": "Cobblestone Generator",
+  "block.idlegenerators.coal_generator": "Coal Generator",
+  "block.idlegenerators.copper_generator": "Copper Generator",
+  "block.idlegenerators.iron_generator": "Iron Generator",
+  "block.idlegenerators.gold_generator": "Gold Generator",
+  "block.idlegenerators.diamond_generator": "Diamond Generator",
+  "block.idlegenerators.emerald_generator": "Emerald Generator",
+  "block.idlegenerators.lapis_generator": "Lapis Generator",
+  "block.idlegenerators.redstone_generator": "Redstone Generator",
+  "block.idlegenerators.quartz_generator": "Quartz Generator",
+  "block.idlegenerators.netherite_generator": "Netherite Generator",
+  "block.idlegenerators.oak_log_generator": "Oak Log Generator",
+  "block.idlegenerators.spruce_log_generator": "Spruce Log Generator",
+  "block.idlegenerators.birch_log_generator": "Birch Log Generator",
+  "block.idlegenerators.jungle_log_generator": "Jungle Log Generator",
+  "block.idlegenerators.acacia_log_generator": "Acacia Log Generator",
+  "block.idlegenerators.dark_oak_log_generator": "Dark Oak Log Generator",
+  "block.idlegenerators.mangrove_log_generator": "Mangrove Log Generator",
+  "block.idlegenerators.cherry_log_generator": "Cherry Log Generator",
+
+  "text.autoconfig.idlegenerators.title": "Idle Generators",
+  "text.autoconfig.idlegenerators.option.hudEnabled": "HUD Enabled",
+  "text.autoconfig.idlegenerators.option.dropContentsOnBreak": "Drop Contents on Break",
+  "text.autoconfig.idlegenerators.option.productionSpeedMultiplier": "Production Speed Multiplier"
+}
