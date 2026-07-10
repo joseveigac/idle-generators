@@ -22,6 +22,9 @@
     ],
     "fabric-gametest": [
       "com.ghozix.idlegenerators.fabric.gametest.IGGameTests"
+    ],
+    "fabric-datagen": [
+      "com.ghozix.idlegenerators.fabric.datagen.IGDataGenerator"
     ]
   },
   "mixins": [

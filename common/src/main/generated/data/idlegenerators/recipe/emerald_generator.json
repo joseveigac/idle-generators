@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:emerald_block"
+    },
+    "C": {
+      "item": "minecraft:bookshelf"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "Q": {
+      "item": "minecraft:bell"
+    }
+  },
+  "pattern": [
+    "GQG",
+    "CBC",
+    "GCG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "idlegenerators:emerald_generator"
+  }
+}

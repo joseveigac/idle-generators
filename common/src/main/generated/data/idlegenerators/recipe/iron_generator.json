@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "P": {
+      "item": "minecraft:iron_pickaxe"
+    }
+  },
+  "pattern": [
+    "GPG",
+    "PBP",
+    "GPG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "idlegenerators:iron_generator"
+  }
+}

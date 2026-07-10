@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bone_meal"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "L": {
+      "item": "minecraft:birch_log"
+    },
+    "S": {
+      "item": "minecraft:birch_sapling"
+    }
+  },
+  "pattern": [
+    "GBG",
+    "SLS",
+    "GSG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "idlegenerators:birch_log_generator"
+  }
+}

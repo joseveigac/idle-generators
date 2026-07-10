@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:lapis_block"
+    },
+    "C": {
+      "item": "minecraft:prismarine_crystals"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "Q": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "pattern": [
+    "GQG",
+    "CBC",
+    "GQG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "idlegenerators:lapis_generator"
+  }
+}
