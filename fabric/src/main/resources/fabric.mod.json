@@ -19,6 +19,9 @@
     ],
     "modmenu": [
       "com.ghozix.idlegenerators.fabric.IGModMenu"
+    ],
+    "fabric-gametest": [
+      "com.ghozix.idlegenerators.fabric.gametest.IGGameTests"
     ]
   },
   "mixins": [
