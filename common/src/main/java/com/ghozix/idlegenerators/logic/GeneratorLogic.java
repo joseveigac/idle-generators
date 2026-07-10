@@ -17,6 +17,7 @@ public final class GeneratorLogic {
     }
 
     public static Settle settle(long nowMs, long lastInteractionMs, int stored, int cap, long intervalMs) {
+        if (intervalMs <= 0) throw new IllegalArgumentException("intervalMs must be positive: " + intervalMs);
         if (nowMs < lastInteractionMs) {
             // Reloj del sistema movido hacia atrás: clamp, el buffer se conserva.
             return new Settle(Math.min(stored, cap), nowMs);

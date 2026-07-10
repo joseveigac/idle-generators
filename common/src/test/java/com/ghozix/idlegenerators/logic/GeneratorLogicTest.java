@@ -60,6 +60,11 @@ class GeneratorLogicTest {
         assertEquals(5_000L, GeneratorLogic.effectiveIntervalMs(5_000L, -3.0));
     }
 
+    @Test void nonPositiveIntervalIsRejected() {
+        assertThrows(IllegalArgumentException.class, () -> GeneratorLogic.settle(1_000L, 0L, 0, 512, 0L));
+        assertThrows(IllegalArgumentException.class, () -> GeneratorLogic.settle(1_000L, 0L, 0, 512, -5_000L));
+    }
+
     @Test void cappedBufferStopsAccumulatingButKeepsTimestampFresh() {
         // Con el buffer al cap, lastInteraction debe seguir avanzando para no
         // acumular "ciclos fantasma" que se cobrarían tras retirar.
