@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "idlegenerators",
+  "version": "${version}",
+  "name": "Idle Generators",
+  "description": "Idle resource generators: place a generator and it produces resources over real time, even while the world is closed.",
+  "authors": [
+    "ghozix"
+  ],
+  "license": "All Rights Reserved",
+  "icon": "assets/idlegenerators/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ghozix.idlegenerators.fabric.IdleGeneratorsFabric"
+    ],
+    "client": [
+      "com.ghozix.idlegenerators.fabric.client.IdleGeneratorsFabricClient"
+    ]
+  },
+  "mixins": [
+    "idlegenerators.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  }
+}
