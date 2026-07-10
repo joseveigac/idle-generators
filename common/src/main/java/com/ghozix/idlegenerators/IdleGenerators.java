@@ -1,6 +1,7 @@
 package com.ghozix.idlegenerators;
 
 import com.ghozix.idlegenerators.config.IGConfig;
+import com.ghozix.idlegenerators.hud.GeneratorHud;
 import com.ghozix.idlegenerators.registry.ModBlocks;
 import com.ghozix.idlegenerators.registry.ModItems;
 import com.ghozix.idlegenerators.registry.ModBlockEntities;
@@ -17,5 +18,6 @@ public final class IdleGenerators {
         ModBlocks.register();
         ModItems.register();
         ModBlockEntities.register();
+        GeneratorHud.register();
     }
 }
