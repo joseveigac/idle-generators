@@ -16,6 +16,9 @@
     ],
     "client": [
       "com.ghozix.idlegenerators.fabric.client.IdleGeneratorsFabricClient"
+    ],
+    "modmenu": [
+      "com.ghozix.idlegenerators.fabric.IGModMenu"
     ]
   },
   "mixins": [
@@ -28,5 +31,8 @@
     "architectury": ">=13.0.8",
     "fabric-api": "*",
     "cloth-config": ">=15.0.140"
+  },
+  "suggests": {
+    "modmenu": "*"
   }
 }
