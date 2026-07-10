@@ -1,6 +1,7 @@
 package com.ghozix.idlegenerators.generator;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -54,8 +55,9 @@ public class GeneratorBlock extends Block implements EntityBlock {
     }
 
     private InteractionResult collect(Level level, BlockPos pos, Player player) {
-        if (!level.isClientSide && level.getBlockEntity(pos) instanceof GeneratorBlockEntity be) {
-            be.collect(player, player.isShiftKeyDown() ? 64 : 1);
+        if (!level.isClientSide && player instanceof ServerPlayer sp
+                && level.getBlockEntity(pos) instanceof GeneratorBlockEntity be) {
+            be.collect(sp, sp.isShiftKeyDown() ? 64 : 1);
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
