@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/copper_generator_frame"
+    }
+  }
+}

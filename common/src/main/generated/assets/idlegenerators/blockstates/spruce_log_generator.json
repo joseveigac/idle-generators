@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/spruce_log_generator_frame"
+    }
+  }
+}

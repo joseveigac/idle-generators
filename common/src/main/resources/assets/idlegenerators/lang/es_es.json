@@ -1,0 +1,31 @@
+{
+  "itemGroup.idlegenerators.tab": "Idle Generators",
+  "hud.idlegenerators.status": "%s | %s/%s | %s%%",
+  "hud.idlegenerators.status_short": "%s/%s | %s%%",
+  "config.jade.plugin_idlegenerators.generator": "Estado del generador",
+
+  "block.idlegenerators.cobblestone_generator": "Generador de Adoquín",
+  "block.idlegenerators.coal_generator": "Generador de Carbón",
+  "block.idlegenerators.copper_generator": "Generador de Cobre",
+  "block.idlegenerators.iron_generator": "Generador de Hierro",
+  "block.idlegenerators.gold_generator": "Generador de Oro",
+  "block.idlegenerators.diamond_generator": "Generador de Diamantes",
+  "block.idlegenerators.emerald_generator": "Generador de Esmeraldas",
+  "block.idlegenerators.lapis_generator": "Generador de Lapislázuli",
+  "block.idlegenerators.redstone_generator": "Generador de Redstone",
+  "block.idlegenerators.quartz_generator": "Generador de Cuarzo",
+  "block.idlegenerators.netherite_generator": "Generador de Inframundita",
+  "block.idlegenerators.oak_log_generator": "Generador de Troncos de Roble",
+  "block.idlegenerators.spruce_log_generator": "Generador de Troncos de Pícea",
+  "block.idlegenerators.birch_log_generator": "Generador de Troncos de Abedul",
+  "block.idlegenerators.jungle_log_generator": "Generador de Troncos de Jungla",
+  "block.idlegenerators.acacia_log_generator": "Generador de Troncos de Acacia",
+  "block.idlegenerators.dark_oak_log_generator": "Generador de Troncos de Roble Oscuro",
+  "block.idlegenerators.mangrove_log_generator": "Generador de Troncos de Mangle",
+  "block.idlegenerators.cherry_log_generator": "Generador de Troncos de Cerezo",
+
+  "text.autoconfig.idlegenerators.title": "Idle Generators",
+  "text.autoconfig.idlegenerators.option.hudEnabled": "HUD al mirar un generador",
+  "text.autoconfig.idlegenerators.option.dropContentsOnBreak": "Dropear el contenido al romper",
+  "text.autoconfig.idlegenerators.option.productionSpeedMultiplier": "Multiplicador de velocidad de producción"
+}

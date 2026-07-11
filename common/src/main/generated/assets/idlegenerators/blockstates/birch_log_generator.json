@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/birch_log_generator_frame"
+    }
+  }
+}

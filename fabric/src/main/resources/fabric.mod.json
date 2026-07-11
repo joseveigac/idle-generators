@@ -16,6 +16,18 @@
     ],
     "client": [
       "com.ghozix.idlegenerators.fabric.client.IdleGeneratorsFabricClient"
+    ],
+    "modmenu": [
+      "com.ghozix.idlegenerators.fabric.IGModMenu"
+    ],
+    "fabric-gametest": [
+      "com.ghozix.idlegenerators.fabric.gametest.IGGameTests"
+    ],
+    "fabric-datagen": [
+      "com.ghozix.idlegenerators.fabric.datagen.IGDataGenerator"
+    ],
+    "jade": [
+      "com.ghozix.idlegenerators.compat.jade.IGJadePlugin"
     ]
   },
   "mixins": [
@@ -26,6 +38,11 @@
     "minecraft": "~1.21.1",
     "java": ">=21",
     "architectury": ">=13.0.8",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "cloth-config": ">=15.0.140"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "jade": "*"
   }
 }

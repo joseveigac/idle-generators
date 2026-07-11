@@ -11,7 +11,7 @@ authors = "ghozix"
 description = '''
 Idle resource generators: place a generator and it produces resources over real time, even while the world is closed.
 '''
-#logoFile = ""
+logoFile = "assets/idlegenerators/icon.png"
 
 [[dependencies.idlegenerators]]
 modId = "neoforge"
@@ -31,6 +31,13 @@ side = "BOTH"
 modId = "architectury"
 type = "required"
 versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.idlegenerators]]
+modId = "cloth_config"
+type = "required"
+versionRange = "[15.0.140,)"
 ordering = "AFTER"
 side = "BOTH"
 

@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "#gen"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [4, 11, 8, 15], "texture": "#gen", "cullface": "north"},
+        "south": {"uv": [12, 11, 16, 15], "texture": "#gen", "cullface": "south"},
+        "east":  {"uv": [0, 11, 4, 15], "texture": "#gen", "cullface": "east"},
+        "west":  {"uv": [8, 11, 12, 15], "texture": "#gen", "cullface": "west"},
+        "up":    {"uv": [4, 7, 8, 11], "texture": "#gen", "cullface": "up"},
+        "down":  {"uv": [8, 7, 12, 11], "texture": "#gen", "cullface": "down"}
+      }
+    }
+  ]
+}

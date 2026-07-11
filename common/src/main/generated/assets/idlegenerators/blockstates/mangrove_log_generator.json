@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/mangrove_log_generator_frame"
+    }
+  }
+}

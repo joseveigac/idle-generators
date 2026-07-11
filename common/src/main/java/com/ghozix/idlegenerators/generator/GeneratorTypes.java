@@ -1,0 +1,79 @@
+package com.ghozix.idlegenerators.generator;
+
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+
+import java.util.List;
+import java.util.Map;
+
+public final class GeneratorTypes {
+    private GeneratorTypes() {}
+
+    private static GeneratorType wood(String key, Item log, Item sapling) {
+        return new GeneratorType(key, 5, 64, log,
+                List.of("GBG", "SLS", "GSG"),
+                Map.of('G', Items.GLASS, 'B', Items.BONE_MEAL, 'S', sapling, 'L', log),
+                log);
+    }
+
+    public static final List<GeneratorType> ALL = List.of(
+        // ── Minerales (11) ─────────────────────────────────────────────
+        new GeneratorType("cobblestone", 5, 512, Items.COBBLESTONE,
+            List.of("GPG", "LSW", "GPG"),
+            Map.of('G', Items.GLASS, 'P', Items.STONE_PICKAXE, 'L', Items.LAVA_BUCKET,
+                   'S', Items.SMOOTH_STONE, 'W', Items.WATER_BUCKET),
+            Items.COBBLESTONE),
+        new GeneratorType("coal", 20, 512, Items.COAL,
+            List.of("GFG", "FBF", "GFG"),
+            Map.of('G', Items.GLASS, 'F', Items.FURNACE, 'B', Items.COAL_BLOCK),
+            Items.COAL),
+        new GeneratorType("copper", 30, 512, Items.RAW_COPPER,
+            List.of("GPG", "PBP", "GPG"),
+            Map.of('G', Items.GLASS, 'P', Items.LIGHTNING_ROD, 'B', Items.COPPER_BLOCK),
+            Items.COPPER_INGOT),
+        new GeneratorType("iron", 30, 512, Items.RAW_IRON,
+            List.of("GPG", "PBP", "GPG"),
+            Map.of('G', Items.GLASS, 'P', Items.IRON_PICKAXE, 'B', Items.IRON_BLOCK),
+            Items.IRON_INGOT),
+        new GeneratorType("gold", 35, 512, Items.GOLD_INGOT,
+            List.of("GBG", "BCB", "GBG"),
+            Map.of('G', Items.GLASS, 'B', Items.BLAZE_ROD, 'C', Items.GOLD_BLOCK),
+            Items.GOLD_INGOT),
+        new GeneratorType("diamond", 80, 256, Items.DIAMOND,
+            List.of("GOG", "OBO", "GOG"),
+            Map.of('G', Items.GLASS, 'O', Items.CRYING_OBSIDIAN, 'B', Items.DIAMOND_BLOCK),
+            Items.DIAMOND),
+        new GeneratorType("emerald", 60, 512, Items.EMERALD,
+            List.of("GQG", "CBC", "GCG"),
+            Map.of('G', Items.GLASS, 'Q', Items.BELL, 'C', Items.BOOKSHELF, 'B', Items.EMERALD_BLOCK),
+            Items.EMERALD),
+        new GeneratorType("lapis", 15, 1024, Items.LAPIS_LAZULI,
+            List.of("GQG", "CBC", "GQG"),
+            Map.of('G', Items.GLASS, 'Q', Items.PRISMARINE_SHARD, 'C', Items.PRISMARINE_CRYSTALS,
+                   'B', Items.LAPIS_BLOCK),
+            Items.LAPIS_LAZULI),
+        new GeneratorType("redstone", 15, 1024, Items.REDSTONE,
+            List.of("GQG", "CBC", "GQG"),
+            Map.of('G', Items.GLASS, 'Q', Items.QUARTZ, 'C', Items.COMPARATOR, 'B', Items.REDSTONE_BLOCK),
+            Items.REDSTONE),
+        new GeneratorType("quartz", 30, 512, Items.QUARTZ,
+            List.of("GFG", "FBF", "GFG"),
+            Map.of('G', Items.GLASS, 'F', Items.GLOWSTONE, 'B', Items.QUARTZ_BLOCK),
+            Items.QUARTZ),
+        new GeneratorType("netherite", 100, 64, Items.NETHERITE_INGOT,
+            List.of("GNG", "RBR", "GSG"),
+            Map.of('G', Items.GLASS, 'N', Items.NETHER_STAR, 'R', Items.WITHER_ROSE,
+                   'B', Items.NETHERITE_BLOCK, 'S', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+            Items.NETHERITE_INGOT),
+        // ── Maderas (8 en 1.21.1; pale_oak solo existe desde 1.21.4 → rama 26.2)
+        wood("oak_log", Items.OAK_LOG, Items.OAK_SAPLING),
+        wood("spruce_log", Items.SPRUCE_LOG, Items.SPRUCE_SAPLING),
+        wood("birch_log", Items.BIRCH_LOG, Items.BIRCH_SAPLING),
+        wood("jungle_log", Items.JUNGLE_LOG, Items.JUNGLE_SAPLING),
+        wood("acacia_log", Items.ACACIA_LOG, Items.ACACIA_SAPLING),
+        wood("dark_oak_log", Items.DARK_OAK_LOG, Items.DARK_OAK_SAPLING),
+        wood("mangrove_log", Items.MANGROVE_LOG, Items.MANGROVE_PROPAGULE),
+        wood("cherry_log", Items.CHERRY_LOG, Items.CHERRY_SAPLING)
+    );
+}
