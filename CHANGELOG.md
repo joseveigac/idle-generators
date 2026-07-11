@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0 — Minecraft 26.2
+## 1.0.0 — Minecraft 26.2
 
 Port from Minecraft 1.21.1 to Minecraft 26.2 (NeoForge + Fabric), with one new generator.
 

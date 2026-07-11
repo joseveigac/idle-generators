@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/dark_oak_log_generator_frame" }
+  }
+}

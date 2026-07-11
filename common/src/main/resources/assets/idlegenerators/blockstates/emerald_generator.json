@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/emerald_generator_frame" }
+  }
+}

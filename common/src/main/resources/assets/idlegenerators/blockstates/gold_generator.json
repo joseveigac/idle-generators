@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/gold_generator_frame" }
+  }
+}

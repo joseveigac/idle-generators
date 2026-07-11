@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/coal_generator_frame" }
+  }
+}

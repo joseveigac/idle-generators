@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/cobblestone_generator_frame" }
+  }
+}

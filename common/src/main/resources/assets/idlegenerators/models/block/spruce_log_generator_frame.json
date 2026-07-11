@@ -1,5 +1,5 @@
 ﻿{
-  "parent": "idlegenerators:block/generator_base",
+  "parent": "idlegenerators:block/generator_frame",
   "textures": {
     "gen": "idlegenerators:block/spruce_log_generator"
   }

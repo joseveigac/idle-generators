@@ -1,5 +1,5 @@
 ﻿{
-  "parent": "idlegenerators:block/generator_base",
+  "parent": "idlegenerators:block/generator_frame",
   "textures": {
     "gen": "idlegenerators:block/pale_oak_log_generator"
   }
