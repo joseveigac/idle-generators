@@ -25,6 +25,9 @@
     ],
     "fabric-datagen": [
       "com.ghozix.idlegenerators.fabric.datagen.IGDataGenerator"
+    ],
+    "jade": [
+      "com.ghozix.idlegenerators.compat.jade.IGJadePlugin"
     ]
   },
   "mixins": [
@@ -39,6 +42,7 @@
     "cloth-config": ">=15.0.140"
   },
   "suggests": {
-    "modmenu": "*"
+    "modmenu": "*",
+    "jade": "*"
   }
 }

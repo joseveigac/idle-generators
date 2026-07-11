@@ -1,6 +1,8 @@
 {
   "itemGroup.idlegenerators.tab": "Idle Generators",
   "hud.idlegenerators.status": "%s | %s/%s | %s%%",
+  "hud.idlegenerators.status_short": "%s/%s | %s%%",
+  "config.jade.plugin_idlegenerators.generator": "Generator status",
 
   "block.idlegenerators.cobblestone_generator": "Cobblestone Generator",
   "block.idlegenerators.coal_generator": "Coal Generator",

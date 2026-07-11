@@ -68,6 +68,10 @@ dependencies {
     modCompileOnly "com.terraformersmc:modmenu:$rootProject.modmenu_version"
     modLocalRuntime "com.terraformersmc:modmenu:$rootProject.modmenu_version"
 
+    // Jade — integración opcional (tooltip al mirar un generador). Dev runtime only.
+    modCompileOnly "maven.modrinth:jade:$rootProject.jade_fabric_version"
+    modLocalRuntime "maven.modrinth:jade:$rootProject.jade_fabric_version"
+
     // Iris + Sodium — dev-only, for the Photo Client run (screenshots with shaders). NEVER shipped.
     // Iris 1.8.8 requires Sodium 0.6.x (verified from its fabric.mod.json, 2026-07).
     modLocalRuntime 'maven.modrinth:sodium:mc1.21.1-0.6.13-fabric'
