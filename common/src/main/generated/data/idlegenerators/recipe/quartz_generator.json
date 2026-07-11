@@ -1,16 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:quartz_block"
-    },
-    "F": {
-      "item": "minecraft:glowstone"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    }
+    "B": "minecraft:quartz_block",
+    "F": "minecraft:glowstone",
+    "G": "minecraft:glass"
   },
   "pattern": [
     "GFG",
@@ -18,7 +11,6 @@
     "GFG"
   ],
   "result": {
-    "count": 1,
     "id": "idlegenerators:quartz_generator"
   }
 }

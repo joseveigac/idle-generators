@@ -1,16 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:coal_block"
-    },
-    "F": {
-      "item": "minecraft:furnace"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    }
+    "B": "minecraft:coal_block",
+    "F": "minecraft:furnace",
+    "G": "minecraft:glass"
   },
   "pattern": [
     "GFG",
@@ -18,7 +11,6 @@
     "GFG"
   ],
   "result": {
-    "count": 1,
     "id": "idlegenerators:coal_generator"
   }
 }

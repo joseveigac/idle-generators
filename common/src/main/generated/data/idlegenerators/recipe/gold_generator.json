@@ -1,16 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:blaze_rod"
-    },
-    "C": {
-      "item": "minecraft:gold_block"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    }
+    "B": "minecraft:blaze_rod",
+    "C": "minecraft:gold_block",
+    "G": "minecraft:glass"
   },
   "pattern": [
     "GBG",
@@ -18,7 +11,6 @@
     "GBG"
   ],
   "result": {
-    "count": 1,
     "id": "idlegenerators:gold_generator"
   }
 }

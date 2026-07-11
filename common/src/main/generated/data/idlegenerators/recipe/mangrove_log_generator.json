@@ -1,19 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:bone_meal"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "L": {
-      "item": "minecraft:mangrove_log"
-    },
-    "S": {
-      "item": "minecraft:mangrove_propagule"
-    }
+    "B": "minecraft:bone_meal",
+    "G": "minecraft:glass",
+    "L": "minecraft:mangrove_log",
+    "S": "minecraft:mangrove_propagule"
   },
   "pattern": [
     "GBG",
@@ -21,7 +12,6 @@
     "GSG"
   ],
   "result": {
-    "count": 1,
     "id": "idlegenerators:mangrove_log_generator"
   }
 }

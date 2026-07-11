@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "idlegenerators:birch_log_generator"
+          "name": "idlegenerators:pale_oak_log_generator"
         }
       ],
       "rolls": 1.0

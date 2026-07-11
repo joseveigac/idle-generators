@@ -3,8 +3,8 @@
   "key": {
     "B": "minecraft:bone_meal",
     "G": "minecraft:glass",
-    "L": "minecraft:cherry_log",
-    "S": "minecraft:cherry_sapling"
+    "L": "minecraft:pale_oak_log",
+    "S": "minecraft:pale_oak_sapling"
   },
   "pattern": [
     "GBG",
@@ -12,6 +12,6 @@
     "GSG"
   ],
   "result": {
-    "id": "idlegenerators:cherry_log_generator"
+    "id": "idlegenerators:pale_oak_log_generator"
   }
 }

@@ -1,22 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "L": {
-      "item": "minecraft:lava_bucket"
-    },
-    "P": {
-      "item": "minecraft:stone_pickaxe"
-    },
-    "S": {
-      "item": "minecraft:smooth_stone"
-    },
-    "W": {
-      "item": "minecraft:water_bucket"
-    }
+    "G": "minecraft:glass",
+    "L": "minecraft:lava_bucket",
+    "P": "minecraft:stone_pickaxe",
+    "S": "minecraft:smooth_stone",
+    "W": "minecraft:water_bucket"
   },
   "pattern": [
     "GPG",
@@ -24,7 +13,6 @@
     "GPG"
   ],
   "result": {
-    "count": 1,
     "id": "idlegenerators:cobblestone_generator"
   }
 }

@@ -1,6 +1,0 @@
-{
-  "parent": "idlegenerators:block/generator_frame",
-  "textures": {
-    "gen": "idlegenerators:block/netherite_generator"
-  }
-}
