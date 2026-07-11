@@ -27,7 +27,8 @@ public final class ModBlocks {
                 new GeneratorBlock(type, BlockBehaviour.Properties.of()
                         .strength(1.0F, 1200.0F)          // 1s de minado; a prueba de explosiones
                         .pushReaction(PushReaction.BLOCK) // no empujable por pistones
-                        .sound(SoundType.STONE))));
+                        .sound(SoundType.STONE)
+                        .noOcclusion())));                // el modelo tiene huecos de cristal (cutout)
         }
     }
 

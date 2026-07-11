@@ -27,7 +27,8 @@ public class GeneratorBlockEntity extends BlockEntity {
 
     public GeneratorType type() { return ((GeneratorBlock) getBlockState().getBlock()).type(); }
 
-    private long intervalMs() {
+    /** Intervalo efectivo (config aplicada). Público para el HUD/Jade (progreso de ciclo). */
+    public long effectiveIntervalMs() {
         return GeneratorLogic.effectiveIntervalMs(type().baseIntervalMs(), IGConfig.get().productionSpeedMultiplier);
     }
 
@@ -40,13 +41,13 @@ public class GeneratorBlockEntity extends BlockEntity {
 
     /** Solo lectura, para HUD y Jade: no muta el estado. */
     public GeneratorLogic.Settle settleView(long nowMs) {
-        return GeneratorLogic.settle(nowMs, lastInteraction, storedAmount, type().cap(), intervalMs());
+        return GeneratorLogic.settle(nowMs, lastInteraction, storedAmount, type().cap(), effectiveIntervalMs());
     }
 
     /** Retira hasta {@code requested} items al inventario del jugador (exceso al suelo). */
     public void collect(ServerPlayer player, int requested) {
         var w = GeneratorLogic.withdraw(System.currentTimeMillis(), lastInteraction,
-                storedAmount, type().cap(), intervalMs(), requested);
+                storedAmount, type().cap(), effectiveIntervalMs(), requested);
         storedAmount = w.newStored();
         lastInteraction = w.newLastInteraction();
         setChanged();

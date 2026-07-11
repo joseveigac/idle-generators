@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "all": "idlegenerators:block/oak_log_generator"
+    "gen": "idlegenerators:block/oak_log_generator"
   }
 }

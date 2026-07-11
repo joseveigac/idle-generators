@@ -21,9 +21,13 @@ public final class GeneratorHud {
             if (!(hit instanceof BlockHitResult bhr)) return;
             if (!(sp.level().getBlockEntity(bhr.getBlockPos()) instanceof GeneratorBlockEntity be)) return;
 
-            var s = be.settleView(System.currentTimeMillis());
+            long now = System.currentTimeMillis();
+            var s = be.settleView(now);
             int cap = be.type().cap();
-            int percent = (int) (s.produced() * 100L / cap);
+            // Paridad Bedrock: % = progreso hacia el SIGUIENTE item (sube en tiempo real),
+            // equivalente a floor((elapsed % interval) / interval * 100) del addon original.
+            long intervalMs = be.effectiveIntervalMs();
+            int percent = (int) Math.min(99L, Math.max(0L, (now - s.settledLastInteraction()) * 100 / intervalMs));
             sp.displayClientMessage(Component.translatable("hud.idlegenerators.status",
                     Component.translatable(be.getBlockState().getBlock().getDescriptionId()),
                     s.produced(), cap, percent), true);
