@@ -1,7 +1,6 @@
 package com.ghozix.idlegenerators.client;
 
 import com.ghozix.idlegenerators.registry.ModBlockEntities;
-import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,9 +10,12 @@ public final class IGClient {
     private IGClient() {}
 
     public static void init() {
-        // En CLIENT_SETUP los registros ya están poblados en ambos loaders.
-        ClientLifecycleEvent.CLIENT_SETUP.register(mc ->
-                BlockEntityRendererRegistry.register(ModBlockEntities.GENERATOR.get(),
-                        ctx -> new GeneratorCoreRenderer()));
+        // listen() dispara cuando el BE type ya está registrado (inmediato en el
+        // client init de Fabric; al poblarse los registros en NeoForge). OJO: no
+        // usar ClientLifecycleEvent.CLIENT_SETUP aquí — en Fabric lo dispara el
+        // entrypoint client de Architectury, que corre ANTES que el nuestro (orden
+        // de dependencias), así que un listener registrado aquí no llega a verlo.
+        ModBlockEntities.GENERATOR.listen(type ->
+                BlockEntityRendererRegistry.register(type, ctx -> new GeneratorCoreRenderer()));
     }
 }
