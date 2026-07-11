@@ -14,7 +14,8 @@ public final class GeneratorHud {
     public static void register() {
         TickEvent.PLAYER_POST.register(player -> {
             if (!(player instanceof ServerPlayer sp)) return;      // solo lado servidor
-            if (sp.tickCount % 5 != 0) return;                     // cada 0.25 s, como Bedrock
+            // Cada tick (Bedrock usa 5 por coste de su script engine; aquí un raycast
+            // por jugador y tick es despreciable y el % sube fluido).
             if (!IGConfig.get().hudEnabled) return;
 
             HitResult hit = sp.pick(6.0D, 1.0F, false);            // raycast 6 bloques

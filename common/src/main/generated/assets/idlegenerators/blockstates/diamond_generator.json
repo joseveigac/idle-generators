@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "idlegenerators:block/diamond_generator"
+      "model": "idlegenerators:block/diamond_generator_frame"
     }
   }
 }

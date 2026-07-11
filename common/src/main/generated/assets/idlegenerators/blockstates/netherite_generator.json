@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "idlegenerators:block/netherite_generator"
+      "model": "idlegenerators:block/netherite_generator_frame"
     }
   }
 }

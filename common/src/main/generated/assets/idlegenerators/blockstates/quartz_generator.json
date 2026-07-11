@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "idlegenerators:block/quartz_generator"
+      "model": "idlegenerators:block/quartz_generator_frame"
     }
   }
 }

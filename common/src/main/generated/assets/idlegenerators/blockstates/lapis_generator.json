@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "idlegenerators:block/lapis_generator"
+      "model": "idlegenerators:block/lapis_generator_frame"
     }
   }
 }

@@ -1,6 +1,7 @@
 package com.ghozix.idlegenerators.neoforge;
 
 import com.ghozix.idlegenerators.IdleGenerators;
+import com.ghozix.idlegenerators.client.IGClient;
 import com.ghozix.idlegenerators.config.IGConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.neoforged.api.distmarker.Dist;
@@ -16,6 +17,7 @@ public final class IdleGeneratorsNeoForge {
         IdleGenerators.init();
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
+            IGClient.init();
             container.registerExtensionPoint(IConfigScreenFactory.class,
                     (mc, parent) -> AutoConfig.getConfigScreen(IGConfig.class, parent).get());
         }

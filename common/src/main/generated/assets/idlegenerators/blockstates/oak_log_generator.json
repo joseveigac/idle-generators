@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "idlegenerators:block/oak_log_generator"
+      "model": "idlegenerators:block/oak_log_generator_frame"
     }
   }
 }
