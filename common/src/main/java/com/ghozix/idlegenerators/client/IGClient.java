@@ -16,6 +16,6 @@ public final class IGClient {
         // entrypoint client de Architectury, que corre ANTES que el nuestro (orden
         // de dependencias), así que un listener registrado aquí no llega a verlo.
         ModBlockEntities.GENERATOR.listen(type ->
-                BlockEntityRendererRegistry.register(type, ctx -> new GeneratorCoreRenderer()));
+                BlockEntityRendererRegistry.register(type, ctx -> new GeneratorCoreRenderer(ctx)));
     }
 }

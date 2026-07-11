@@ -29,9 +29,9 @@ public final class GeneratorHud {
             // equivalente a floor((elapsed % interval) / interval * 100) del addon original.
             long intervalMs = be.effectiveIntervalMs();
             int percent = (int) Math.min(99L, Math.max(0L, (now - s.settledLastInteraction()) * 100 / intervalMs));
-            sp.displayClientMessage(Component.translatable("hud.idlegenerators.status",
+            sp.sendOverlayMessage(Component.translatable("hud.idlegenerators.status",
                     Component.translatable(be.getBlockState().getBlock().getDescriptionId()),
-                    s.produced(), cap, percent), true);
+                    s.produced(), cap, percent));
         });
     }
 }

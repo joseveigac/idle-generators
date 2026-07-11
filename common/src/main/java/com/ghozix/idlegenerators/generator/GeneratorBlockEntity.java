@@ -4,8 +4,8 @@ import com.ghozix.idlegenerators.config.IGConfig;
 import com.ghozix.idlegenerators.logic.GeneratorLogic;
 import com.ghozix.idlegenerators.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
@@ -79,19 +79,28 @@ public class GeneratorBlockEntity extends BlockEntity {
     public int getStoredAmount() { return storedAmount; }
     public void setLastInteraction(long epochMs) { this.lastInteraction = epochMs; setChanged(); }
 
+    /** Drops buffered items when the block is removed (called by LevelChunk before the BE is unregistered). */
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        storedAmount = Math.max(0, tag.getInt("StoredAmount"));
-        lastInteraction = tag.contains("LastInteraction") ? tag.getLong("LastInteraction") : System.currentTimeMillis();
-        ownerId = tag.hasUUID("Owner") ? tag.getUUID("Owner") : null;
+    public void preRemoveSideEffects(BlockPos pos, BlockState blockState) {
+        Level level = getLevel();
+        if (level != null && !level.isClientSide()) {
+            dropContents(level, pos);
+        }
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-        tag.putInt("StoredAmount", storedAmount);
-        tag.putLong("LastInteraction", lastInteraction);
-        if (ownerId != null) tag.putUUID("Owner", ownerId);
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        storedAmount = Math.max(0, input.getIntOr("StoredAmount", 0));
+        lastInteraction = input.getLongOr("LastInteraction", System.currentTimeMillis());
+        ownerId = input.getString("Owner").map(UUID::fromString).orElse(null);
+    }
+
+    @Override
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        output.putInt("StoredAmount", storedAmount);
+        output.putLong("LastInteraction", lastInteraction);
+        if (ownerId != null) output.putString("Owner", ownerId.toString());
     }
 }

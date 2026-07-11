@@ -9,6 +9,9 @@ public class IGDataGenerator implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack pack = generator.createPack();
         pack.addProvider(IGRecipeProvider::new);
         pack.addProvider(IGLootTableProvider::new);
-        pack.addProvider(IGModelProvider::new);
+        // IGModelProvider is excluded: FabricModelProvider extends a CLIENT-only class
+        // (net.minecraft.client.data.models.ModelProvider) and cannot be loaded in server-mode datagen.
+        // Block/item model JSONs are written as static files in common/src/main/generated/ (blockstates,
+        // models/block/, models/item/) and items/ dispatch files in common/src/main/resources/assets/.
     }
 }

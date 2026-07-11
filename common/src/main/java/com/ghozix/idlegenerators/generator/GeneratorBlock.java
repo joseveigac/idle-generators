@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -35,7 +34,7 @@ public class GeneratorBlock extends Block implements EntityBlock {
     public void setPlacedBy(Level level, BlockPos pos, BlockState state,
                             @Nullable LivingEntity placer, ItemStack stack) {
         super.setPlacedBy(level, pos, state, placer, stack);
-        if (!level.isClientSide && level.getBlockEntity(pos) instanceof GeneratorBlockEntity be) {
+        if (!level.isClientSide() && level.getBlockEntity(pos) instanceof GeneratorBlockEntity be) {
             be.initOnPlace(placer instanceof Player p ? p.getUUID() : null);
         }
     }
@@ -46,28 +45,21 @@ public class GeneratorBlock extends Block implements EntityBlock {
         return collect(level, pos, player);
     }
 
+    // MC 26.x: ItemInteractionResult unified into InteractionResult; useItemOn now returns InteractionResult.
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                          Player player, InteractionHand hand, BlockHitResult hitResult) {
         // Con item en mano también retira (nunca coloca el item sostenido sobre el generador).
         collect(level, pos, player);
-        return ItemInteractionResult.sidedSuccess(level.isClientSide);
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 
     private InteractionResult collect(Level level, BlockPos pos, Player player) {
-        if (!level.isClientSide && player instanceof ServerPlayer sp
+        if (!level.isClientSide() && player instanceof ServerPlayer sp
                 && level.getBlockEntity(pos) instanceof GeneratorBlockEntity be) {
             be.collect(sp, sp.isShiftKeyDown() ? 64 : 1);
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 
-    @Override
-    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (!state.is(newState.getBlock()) && !level.isClientSide
-                && level.getBlockEntity(pos) instanceof GeneratorBlockEntity be) {
-            be.dropContents(level, pos);
-        }
-        super.onRemove(state, level, pos, newState, movedByPiston);
-    }
 }

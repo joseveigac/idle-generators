@@ -5,7 +5,7 @@ import com.ghozix.idlegenerators.generator.GeneratorBlock;
 import com.ghozix.idlegenerators.generator.GeneratorBlockEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
@@ -23,8 +23,8 @@ import snownee.jade.api.config.IPluginConfig;
  */
 @WailaPlugin
 public class IGJadePlugin implements IWailaPlugin {
-    private static final ResourceLocation UID =
-            ResourceLocation.fromNamespaceAndPath(IdleGenerators.MOD_ID, "generator");
+    private static final Identifier UID =
+            Identifier.fromNamespaceAndPath(IdleGenerators.MOD_ID, "generator");
 
     @Override
     public void register(IWailaCommonRegistration registration) {
@@ -38,7 +38,7 @@ public class IGJadePlugin implements IWailaPlugin {
 
     private static final class GeneratorDataProvider implements IServerDataProvider<BlockAccessor> {
         @Override
-        public ResourceLocation getUid() { return UID; }
+        public Identifier getUid() { return UID; }
 
         @Override
         public void appendServerData(CompoundTag data, BlockAccessor accessor) {
@@ -56,14 +56,14 @@ public class IGJadePlugin implements IWailaPlugin {
 
     private static final class GeneratorComponentProvider implements IBlockComponentProvider {
         @Override
-        public ResourceLocation getUid() { return UID; }
+        public Identifier getUid() { return UID; }
 
         @Override
         public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
             CompoundTag data = accessor.getServerData();
             if (data.contains("igProduced")) {
                 tooltip.add(Component.translatable("hud.idlegenerators.status_short",
-                        data.getInt("igProduced"), data.getInt("igCap"), data.getInt("igPercent")));
+                        data.getIntOr("igProduced", 0), data.getIntOr("igCap", 0), data.getIntOr("igPercent", 0)));
             }
         }
     }

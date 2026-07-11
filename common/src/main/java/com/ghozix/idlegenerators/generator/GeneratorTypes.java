@@ -30,7 +30,8 @@ public final class GeneratorTypes {
             Items.COAL),
         new GeneratorType("copper", 30, 512, Items.RAW_COPPER,
             List.of("GPG", "PBP", "GPG"),
-            Map.of('G', Items.GLASS, 'P', Items.LIGHTNING_ROD, 'B', Items.COPPER_BLOCK),
+            Map.of('G', Items.GLASS, 'P', Items.LIGHTNING_ROD.weathering().unaffected(),
+                   'B', Items.COPPER_BLOCK.weathering().unaffected()),
             Items.COPPER_INGOT),
         new GeneratorType("iron", 30, 512, Items.RAW_IRON,
             List.of("GPG", "PBP", "GPG"),
@@ -74,6 +75,8 @@ public final class GeneratorTypes {
         wood("acacia_log", Items.ACACIA_LOG, Items.ACACIA_SAPLING),
         wood("dark_oak_log", Items.DARK_OAK_LOG, Items.DARK_OAK_SAPLING),
         wood("mangrove_log", Items.MANGROVE_LOG, Items.MANGROVE_PROPAGULE),
-        wood("cherry_log", Items.CHERRY_LOG, Items.CHERRY_SAPLING)
+        wood("cherry_log", Items.CHERRY_LOG, Items.CHERRY_SAPLING),
+        // Pale oak is exclusive to MC 26.x (1.21.4+): only present on the 26.2 branch.
+        wood("pale_oak_log", Items.PALE_OAK_LOG, Items.PALE_OAK_SAPLING)
     );
 }
