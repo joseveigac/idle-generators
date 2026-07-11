@@ -23,6 +23,7 @@
   "block.idlegenerators.dark_oak_log_generator": "Dark Oak Log Generator",
   "block.idlegenerators.mangrove_log_generator": "Mangrove Log Generator",
   "block.idlegenerators.cherry_log_generator": "Cherry Log Generator",
+  "block.idlegenerators.pale_oak_log_generator": "Pale Oak Log Generator",
 
   "text.autoconfig.idlegenerators.title": "Idle Generators",
   "text.autoconfig.idlegenerators.option.hudEnabled": "HUD Enabled",

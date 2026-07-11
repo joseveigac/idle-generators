@@ -23,6 +23,7 @@
   "block.idlegenerators.dark_oak_log_generator": "Generador de Troncos de Roble Oscuro",
   "block.idlegenerators.mangrove_log_generator": "Generador de Troncos de Mangle",
   "block.idlegenerators.cherry_log_generator": "Generador de Troncos de Cerezo",
+  "block.idlegenerators.pale_oak_log_generator": "Generador de Troncos de Roble Pálido",
 
   "text.autoconfig.idlegenerators.title": "Idle Generators",
   "text.autoconfig.idlegenerators.option.hudEnabled": "HUD al mirar un generador",
