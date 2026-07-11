@@ -34,10 +34,8 @@ public class GeneratorCoreRenderer implements BlockEntityRenderer<GeneratorBlock
 
     private final ModelPart core;
     private final Map<String, Material> materials = new HashMap<>();
-    private static boolean renderLogged = false; // TEMP
 
     public GeneratorCoreRenderer() {
-        com.mojang.logging.LogUtils.getLogger().info("[IG-DEBUG] GeneratorCoreRenderer constructed"); // TEMP
         MeshDefinition mesh = new MeshDefinition();
         // Mismo box-UV que el geo de Bedrock: texOffs(35,11), cubo 6x6x6 centrado
         // en el origen para poder rotarlo sobre su centro.
@@ -51,7 +49,6 @@ public class GeneratorCoreRenderer implements BlockEntityRenderer<GeneratorBlock
     public void render(GeneratorBlockEntity be, float partialTick, PoseStack poseStack,
                        MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         if (be.getLevel() == null) return;
-        if (!renderLogged) { renderLogged = true; com.mojang.logging.LogUtils.getLogger().info("[IG-DEBUG] render() called for {}", be.type().blockId()); } // TEMP
         float t = (be.getLevel().getGameTime() % LOOP_TICKS) + partialTick;
         float angle = -t * (360.0F / LOOP_TICKS);                       // -360° / 2 s
         float bob = Mth.sin(t * Mth.TWO_PI / LOOP_TICKS) / 16.0F;       // ±1 px
