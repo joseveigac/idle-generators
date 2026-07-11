@@ -19,8 +19,8 @@ Idle Generators adds 19 craftable block-generators that produce resources passiv
 | Generator | Interval | Buffer cap |
 |---|---|---|
 | Cobblestone | 5 s | 512 |
-| Lapis | 15 s | 1 024 |
-| Redstone | 15 s | 1 024 |
+| Lapis | 15 s | 1024 |
+| Redstone | 15 s | 1024 |
 | Coal | 20 s | 512 |
 | Copper | 30 s | 512 |
 | Iron | 30 s | 512 |
