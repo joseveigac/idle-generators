@@ -6,7 +6,7 @@ Idle Generators adds 19 craftable block-generators that produce resources passiv
 
 ## Features
 
-- **19 generators** — 11 mineral types and 8 wood types, each with a configurable production interval and cap.
+- **20 generators** — 11 mineral types and 9 wood types, each with a configurable production interval and cap.
 - **Offline production** — generators use real-world timestamps so items accumulate while the game is closed.
 - **Action-bar HUD** — live buffer readout (items stored / cap) updates every tick when you look at a generator.
 - **Collect or break** — right-click to collect without breaking; break the block to get the buffer plus the block itself.
@@ -37,10 +37,11 @@ Idle Generators adds 19 craftable block-generators that produce resources passiv
 | Dark Oak Log | 5 s | 64 |
 | Mangrove Log | 5 s | 64 |
 | Cherry Log | 5 s | 64 |
+| Pale Oak Log | 5 s | 64 |
 
 ## Requirements
 
-- **Minecraft 1.21.1** — NeoForge or Fabric
+- **Minecraft 26.2** — NeoForge or Fabric
 - [Architectury API](https://modrinth.com/mod/architectury-api)
 - [Cloth Config](https://modrinth.com/mod/cloth-config) (+ [Fabric API](https://modrinth.com/mod/fabric-api) on Fabric; [ModMenu](https://modrinth.com/mod/modmenu) optional on Fabric for the config screen)
 - **Required on CLIENT and SERVER**
