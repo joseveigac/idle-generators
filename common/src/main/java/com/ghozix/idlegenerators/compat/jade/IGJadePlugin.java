@@ -43,13 +43,13 @@ public class IGJadePlugin implements IWailaPlugin {
         @Override
         public void appendServerData(CompoundTag data, BlockAccessor accessor) {
             if (accessor.getBlockEntity() instanceof GeneratorBlockEntity be) {
-                long now = System.currentTimeMillis();
-                var s = be.settleView(now);
+                var s = be.settleView(System.currentTimeMillis());
                 data.putInt("igProduced", s.produced());
                 data.putInt("igCap", be.type().cap());
-                // Mismo % que la action bar: progreso hacia el siguiente item.
-                data.putInt("igPercent", (int) Math.min(99L,
-                        Math.max(0L, (now - s.settledLastInteraction()) * 100 / be.effectiveIntervalMs())));
+                // El cliente extrapola en vivo desde estos dos valores (Jade solo
+                // refresca los server data cada varios ticks y el % se vería a saltos).
+                data.putLong("igLast", s.settledLastInteraction());
+                data.putLong("igInterval", be.effectiveIntervalMs());
             }
         }
     }
@@ -62,8 +62,21 @@ public class IGJadePlugin implements IWailaPlugin {
         public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
             CompoundTag data = accessor.getServerData();
             if (data.contains("igProduced")) {
+                int produced = data.getIntOr("igProduced", 0);
+                int cap = data.getIntOr("igCap", 0);
+                long last = data.getLongOr("igLast", 0L);
+                long interval = Math.max(1L, data.getLongOr("igInterval", 1L));
+                // Extrapolación en vivo (appendTooltip corre cada frame): en singleplayer
+                // los relojes cliente/servidor son el mismo; con skew (multiplayer) se
+                // clampa y en el peor caso el % queda estático hasta el siguiente sync.
+                long elapsed = System.currentTimeMillis() - last;
+                int percent = 0;
+                if (elapsed >= 0 && cap > 0) {
+                    produced = (int) Math.min((long) produced + elapsed / interval, cap);
+                    percent = (int) Math.min(99L, (elapsed % interval) * 100 / interval);
+                }
                 tooltip.add(Component.translatable("hud.idlegenerators.status_short",
-                        data.getIntOr("igProduced", 0), data.getIntOr("igCap", 0), data.getIntOr("igPercent", 0)));
+                        produced, cap, percent));
             }
         }
     }

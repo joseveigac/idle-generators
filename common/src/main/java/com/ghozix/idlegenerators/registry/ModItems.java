@@ -21,6 +21,9 @@ public final class ModItems {
                 new BlockItem(block.get(), new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM,
                         Identifier.fromNamespaceAndPath(IdleGenerators.MOD_ID, itemId)))
+                    // 26.x: el BlockItem ya NO hereda el nombre del bloque; sin esto el
+                    // description id sería item.idlegenerators.* (key cruda, sin lang).
+                    .useBlockDescriptionPrefix()
                     .arch$tab(ModCreativeTab.TAB)));
         });
     }
