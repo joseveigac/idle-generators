@@ -2,6 +2,8 @@ plugins {
     id 'dev.architectury.loom' version '1.11-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.gradleup.shadow' version '8.3.6' apply false
+    // 1.1.0 is the last version supporting Gradle 8.x (2.x needs Gradle 9)
+    id 'me.modmuss50.mod-publish-plugin' version '1.1.0'
 }
 
 architectury {
@@ -87,5 +89,70 @@ subprojects {
             // The repositories here will be used for publishing your artifact, not for
             // retrieving dependencies.
         }
+    }
+}
+
+// Store publishing (Modrinth + CurseForge). Runs from GitHub Actions on release,
+// gated behind the "publish" environment; without tokens or real project IDs it dry-runs.
+// Subprojects must be evaluated first so their remapJar tasks exist.
+evaluationDependsOnChildren()
+
+publishMods {
+    changelog = providers.environmentVariable('CHANGELOG')
+            .getOrElse('See the GitHub release for the full changelog.')
+    type = STABLE
+    dryRun = providers.environmentVariable('MODRINTH_TOKEN').getOrNull() == null \
+            || providers.environmentVariable('CURSEFORGE_TOKEN').getOrNull() == null \
+            || modrinth_project_id == 'TBD' || curseforge_project_id == 'TBD'
+
+    def mrOptions = modrinthOptions {
+        accessToken = providers.environmentVariable('MODRINTH_TOKEN')
+        projectId = modrinth_project_id
+        minecraftVersions.add(minecraft_version)
+    }
+    def cfOptions = curseforgeOptions {
+        accessToken = providers.environmentVariable('CURSEFORGE_TOKEN')
+        projectId = curseforge_project_id
+        minecraftVersions.add(minecraft_version)
+        clientRequired = true
+        serverRequired = true
+        javaVersions.add(JavaVersion.VERSION_21)
+        changelogType = 'markdown'
+    }
+
+    modrinth('modrinthFabric') {
+        from mrOptions
+        file = project(':fabric').tasks.remapJar.archiveFile
+        displayName = "Idle Generators ${mod_version} (Fabric ${minecraft_version})"
+        modLoaders.add('fabric')
+        requires { slug = 'architectury-api' }
+        requires { slug = 'cloth-config' }
+        requires { slug = 'fabric-api' }
+        optional { slug = 'jade' }
+    }
+    modrinth('modrinthNeoforge') {
+        from mrOptions
+        file = project(':neoforge').tasks.remapJar.archiveFile
+        displayName = "Idle Generators ${mod_version} (NeoForge ${minecraft_version})"
+        modLoaders.add('neoforge')
+        requires { slug = 'architectury-api' }
+        requires { slug = 'cloth-config' }
+        optional { slug = 'jade' }
+    }
+    curseforge('curseforgeFabric') {
+        from cfOptions
+        file = project(':fabric').tasks.remapJar.archiveFile
+        displayName = "Idle Generators ${mod_version} (Fabric ${minecraft_version})"
+        modLoaders.add('fabric')
+        requires('architectury-api', 'cloth-config', 'fabric-api')
+        optional('jade')
+    }
+    curseforge('curseforgeNeoforge') {
+        from cfOptions
+        file = project(':neoforge').tasks.remapJar.archiveFile
+        displayName = "Idle Generators ${mod_version} (NeoForge ${minecraft_version})"
+        modLoaders.add('neoforge')
+        requires('architectury-api', 'cloth-config')
+        optional('jade')
     }
 }
