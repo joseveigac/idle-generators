@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:andesite",
+    "G": "minecraft:glass",
+    "S": "minecraft:cobblestone",
+    "T": "minecraft:diorite"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:andesite_generator"
+  }
+}

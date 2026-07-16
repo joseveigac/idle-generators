@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:pointed_dripstone",
+    "G": "minecraft:glass",
+    "S": "minecraft:stone",
+    "T": "minecraft:water_bucket"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:dripstone_generator"
+  }
+}

@@ -17,6 +17,14 @@ public final class GeneratorTypes {
                 log);
     }
 
+    private static GeneratorType stone(String key, int intervalSeconds, int cap, Item product,
+                                       Item topCatalyst, Item sideCatalyst) {
+        return new GeneratorType(key, intervalSeconds, cap, product,
+                List.of("GTG", "SBS", "GTG"),
+                Map.of('G', Items.GLASS, 'T', topCatalyst, 'S', sideCatalyst, 'B', product),
+                product);
+    }
+
     public static final List<GeneratorType> ALL = List.of(
         // ── Minerales (11) ─────────────────────────────────────────────
         new GeneratorType("cobblestone", 5, 512, Items.COBBLESTONE,
@@ -77,6 +85,20 @@ public final class GeneratorTypes {
         wood("mangrove_log", Items.MANGROVE_LOG, Items.MANGROVE_PROPAGULE),
         wood("cherry_log", Items.CHERRY_LOG, Items.CHERRY_SAPLING),
         // Pale oak is exclusive to MC 26.x (1.21.4+): only present on the 26.2 branch.
-        wood("pale_oak_log", Items.PALE_OAK_LOG, Items.PALE_OAK_SAPLING)
+        wood("pale_oak_log", Items.PALE_OAK_LOG, Items.PALE_OAK_SAPLING),
+        // ── Stone & Construction (12) ──────────────────────────────────
+        stone("stone", 5, 512, Items.STONE, Items.FURNACE, Items.COBBLESTONE),
+        stone("granite", 5, 512, Items.GRANITE, Items.QUARTZ, Items.DIORITE),
+        stone("diorite", 5, 512, Items.DIORITE, Items.QUARTZ, Items.COBBLESTONE),
+        stone("andesite", 5, 512, Items.ANDESITE, Items.DIORITE, Items.COBBLESTONE),
+        stone("deepslate", 10, 512, Items.DEEPSLATE, Items.STONE, Items.COBBLED_DEEPSLATE),
+        stone("tuff", 5, 512, Items.TUFF, Items.FLINT, Items.LAVA_BUCKET),
+        stone("calcite", 10, 512, Items.CALCITE, Items.AMETHYST_SHARD, Items.SMOOTH_BASALT),
+        stone("dripstone", 10, 512, Items.POINTED_DRIPSTONE, Items.WATER_BUCKET, Items.STONE),
+        stone("gravel", 5, 512, Items.GRAVEL, Items.FLINT, Items.COBBLESTONE),
+        stone("sand", 5, 512, Items.SAND, Items.WATER_BUCKET, Items.GRAVEL),
+        // 26.x groups colored variants into ColorCollection (1.21.1 uses plain Items.RED_DYE).
+        stone("red_sand", 5, 512, Items.RED_SAND, Items.DYE.red(), Items.SAND),
+        stone("clay", 5, 1024, Items.CLAY_BALL, Items.WATER_BUCKET, Items.DIRT)
     );
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:calcite",
+    "G": "minecraft:glass",
+    "S": "minecraft:smooth_basalt",
+    "T": "minecraft:amethyst_shard"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:calcite_generator"
+  }
+}

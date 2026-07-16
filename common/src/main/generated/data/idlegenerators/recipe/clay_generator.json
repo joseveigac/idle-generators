@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:clay_ball",
+    "G": "minecraft:glass",
+    "S": "minecraft:dirt",
+    "T": "minecraft:water_bucket"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:clay_generator"
+  }
+}

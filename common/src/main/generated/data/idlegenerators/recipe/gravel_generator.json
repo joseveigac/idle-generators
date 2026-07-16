@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:gravel",
+    "G": "minecraft:glass",
+    "S": "minecraft:cobblestone",
+    "T": "minecraft:flint"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:gravel_generator"
+  }
+}

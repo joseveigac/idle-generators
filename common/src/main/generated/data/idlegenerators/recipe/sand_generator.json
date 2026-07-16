@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:sand",
+    "G": "minecraft:glass",
+    "S": "minecraft:gravel",
+    "T": "minecraft:water_bucket"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:sand_generator"
+  }
+}

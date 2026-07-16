@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:tuff",
+    "G": "minecraft:glass",
+    "S": "minecraft:lava_bucket",
+    "T": "minecraft:flint"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:tuff_generator"
+  }
+}

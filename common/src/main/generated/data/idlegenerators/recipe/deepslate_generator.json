@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:deepslate",
+    "G": "minecraft:glass",
+    "S": "minecraft:cobbled_deepslate",
+    "T": "minecraft:stone"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:deepslate_generator"
+  }
+}

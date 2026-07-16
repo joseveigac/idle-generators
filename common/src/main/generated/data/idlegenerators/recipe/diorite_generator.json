@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:diorite",
+    "G": "minecraft:glass",
+    "S": "minecraft:cobblestone",
+    "T": "minecraft:quartz"
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "id": "idlegenerators:diorite_generator"
+  }
+}
