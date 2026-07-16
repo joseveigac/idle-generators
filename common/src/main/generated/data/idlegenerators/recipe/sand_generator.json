@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:sand"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "S": {
+      "item": "minecraft:gravel"
+    },
+    "T": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "idlegenerators:sand_generator"
+  }
+}

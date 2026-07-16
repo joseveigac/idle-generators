@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/tuff_generator_frame"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/red_sand_generator_frame"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:granite"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "S": {
+      "item": "minecraft:diorite"
+    },
+    "T": {
+      "item": "minecraft:quartz"
+    }
+  },
+  "pattern": [
+    "GTG",
+    "SBS",
+    "GTG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "idlegenerators:granite_generator"
+  }
+}

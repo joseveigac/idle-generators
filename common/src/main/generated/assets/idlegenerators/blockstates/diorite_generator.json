@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/diorite_generator_frame"
+    }
+  }
+}

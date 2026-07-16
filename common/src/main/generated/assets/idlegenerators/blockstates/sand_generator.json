@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/sand_generator_frame"
+    }
+  }
+}

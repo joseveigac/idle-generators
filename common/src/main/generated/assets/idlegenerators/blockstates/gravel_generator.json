@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/gravel_generator_frame"
+    }
+  }
+}

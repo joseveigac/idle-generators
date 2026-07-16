@@ -1,0 +1,6 @@
+{
+  "parent": "idlegenerators:block/generator_frame",
+  "textures": {
+    "gen": "idlegenerators:block/andesite_generator"
+  }
+}

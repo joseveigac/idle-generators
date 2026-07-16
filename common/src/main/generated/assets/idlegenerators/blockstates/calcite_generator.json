@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/calcite_generator_frame"
+    }
+  }
+}
