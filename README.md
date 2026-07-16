@@ -2,11 +2,11 @@
 
 **Place a generator and let it work — even while the world is closed.**
 
-Idle Generators adds 19 craftable block-generators that produce resources passively over real time. Close your world, go offline, come back later — the generators track how much time has passed and fill up their internal buffer. When you return, an action-bar HUD shows the current buffer, and you can collect or break the block to retrieve everything that accumulated.
+Idle Generators adds 32 craftable block-generators that produce resources passively over real time. Close your world, go offline, come back later — the generators track how much time has passed and fill up their internal buffer. When you return, an action-bar HUD shows the current buffer, and you can collect or break the block to retrieve everything that accumulated.
 
 ## Features
 
-- **20 generators** — 11 mineral types and 9 wood types, each with a configurable production interval and cap.
+- **32 generators** — 11 mineral types, 9 wood types and 12 stone & construction types, each with a configurable production interval and cap.
 - **Offline production** — generators use real-world timestamps so items accumulate while the game is closed.
 - **Action-bar HUD** — live buffer readout (items stored / cap) updates every tick when you look at a generator.
 - **Collect or break** — right-click to collect without breaking; break the block to get the buffer plus the block itself.
@@ -38,6 +38,18 @@ Idle Generators adds 19 craftable block-generators that produce resources passiv
 | Mangrove Log | 5 s | 64 |
 | Cherry Log | 5 s | 64 |
 | Pale Oak Log | 5 s | 64 |
+| Stone | 5 s | 512 |
+| Granite | 5 s | 512 |
+| Diorite | 5 s | 512 |
+| Andesite | 5 s | 512 |
+| Deepslate | 10 s | 512 |
+| Tuff | 5 s | 512 |
+| Calcite | 10 s | 512 |
+| Dripstone (pointed dripstone) | 10 s | 512 |
+| Gravel | 5 s | 512 |
+| Sand | 5 s | 512 |
+| Red Sand | 5 s | 512 |
+| Clay (clay balls) | 5 s | 1024 |
 
 ## Requirements
 
