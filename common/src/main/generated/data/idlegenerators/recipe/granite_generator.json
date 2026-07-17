@@ -9,10 +9,10 @@
       "item": "minecraft:glass"
     },
     "S": {
-      "item": "minecraft:diorite"
+      "item": "minecraft:cobblestone"
     },
     "T": {
-      "item": "minecraft:quartz"
+      "item": "minecraft:stone_pickaxe"
     }
   },
   "pattern": [

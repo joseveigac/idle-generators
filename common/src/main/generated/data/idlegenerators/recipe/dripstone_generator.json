@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "minecraft:pointed_dripstone"
+      "item": "minecraft:dripstone_block"
     },
     "G": {
       "item": "minecraft:glass"
     },
     "S": {
-      "item": "minecraft:stone"
+      "item": "minecraft:cobblestone"
     },
     "T": {
       "item": "minecraft:water_bucket"

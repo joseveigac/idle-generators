@@ -5,7 +5,8 @@
 Stone & Construction update: 12 new generators (31 total). Suggested in part by community feedback on the Bedrock edition page (deepslate for skyblock).
 
 - **New generators:** Stone, Granite, Diorite, Andesite, Deepslate, Tuff, Calcite, Dripstone (produces pointed dripstone), Gravel, Sand, Red Sand, Clay (produces clay balls).
-- Recipes follow the house format: glass corners, product sample in the center, thematic vanilla catalysts on the edges. Buckets are returned on craft.
+- Recipes follow the house format: glass corners, the block as the center sample (dripstone block, clay block), stone-pickaxe / bucket / dye catalysts on the edges. Buckets are returned on craft.
+- The action-bar HUD now auto-hides when Jade is installed (its look-at tooltip already shows the same info). New config option **Show HUD when Jade is installed** (default off) forces it back on.
 - Fully localized: English + Spanish (es_ES, names verified against vanilla).
 
 > Version jump: 1.0.0 → 1.2.0. The Java edition skips 1.1.0 to align version numbers with the Bedrock edition, whose v1.1.0 (Wood Update) content was already included in Java 1.0.0. From v1.2.0 onward, both editions share version numbers for content updates.

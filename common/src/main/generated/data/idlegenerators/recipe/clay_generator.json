@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "minecraft:clay_ball"
+      "item": "minecraft:clay"
     },
     "G": {
       "item": "minecraft:glass"
     },
     "S": {
-      "item": "minecraft:dirt"
+      "item": "minecraft:cobblestone"
     },
     "T": {
       "item": "minecraft:water_bucket"

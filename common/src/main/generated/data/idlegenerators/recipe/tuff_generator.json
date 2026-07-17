@@ -9,10 +9,10 @@
       "item": "minecraft:glass"
     },
     "S": {
-      "item": "minecraft:lava_bucket"
+      "item": "minecraft:cobblestone"
     },
     "T": {
-      "item": "minecraft:flint"
+      "item": "minecraft:lava_bucket"
     }
   },
   "pattern": [

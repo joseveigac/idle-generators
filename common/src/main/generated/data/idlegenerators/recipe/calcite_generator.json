@@ -9,10 +9,10 @@
       "item": "minecraft:glass"
     },
     "S": {
-      "item": "minecraft:smooth_basalt"
+      "item": "minecraft:cobblestone"
     },
     "T": {
-      "item": "minecraft:amethyst_shard"
+      "item": "minecraft:bone_meal"
     }
   },
   "pattern": [
