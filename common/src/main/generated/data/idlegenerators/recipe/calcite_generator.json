@@ -3,8 +3,8 @@
   "key": {
     "B": "minecraft:calcite",
     "G": "minecraft:glass",
-    "S": "minecraft:smooth_basalt",
-    "T": "minecraft:amethyst_shard"
+    "S": "minecraft:cobblestone",
+    "T": "minecraft:bone_meal"
   },
   "pattern": [
     "GTG",

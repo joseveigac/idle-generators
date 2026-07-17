@@ -4,7 +4,7 @@
     "B": "minecraft:diorite",
     "G": "minecraft:glass",
     "S": "minecraft:cobblestone",
-    "T": "minecraft:quartz"
+    "T": "minecraft:stone_pickaxe"
   },
   "pattern": [
     "GTG",

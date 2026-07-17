@@ -4,7 +4,7 @@
     "B": "minecraft:andesite",
     "G": "minecraft:glass",
     "S": "minecraft:cobblestone",
-    "T": "minecraft:diorite"
+    "T": "minecraft:stone_pickaxe"
   },
   "pattern": [
     "GTG",

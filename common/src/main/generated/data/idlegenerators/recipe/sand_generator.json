@@ -3,7 +3,7 @@
   "key": {
     "B": "minecraft:sand",
     "G": "minecraft:glass",
-    "S": "minecraft:gravel",
+    "S": "minecraft:cobblestone",
     "T": "minecraft:water_bucket"
   },
   "pattern": [

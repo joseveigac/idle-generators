@@ -3,8 +3,8 @@
   "key": {
     "B": "minecraft:granite",
     "G": "minecraft:glass",
-    "S": "minecraft:diorite",
-    "T": "minecraft:quartz"
+    "S": "minecraft:cobblestone",
+    "T": "minecraft:stone_pickaxe"
   },
   "pattern": [
     "GTG",

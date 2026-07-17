@@ -7,6 +7,7 @@ import me.shedaniel.autoconfig.annotation.Config;
 @Config(name = "idlegenerators")
 public class IGConfig implements ConfigData {
     public boolean hudEnabled = true;
+    public boolean showHudWithJade = false;
     public boolean dropContentsOnBreak = true;
     public double productionSpeedMultiplier = 1.0;
 

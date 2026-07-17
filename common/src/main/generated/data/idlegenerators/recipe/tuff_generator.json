@@ -3,8 +3,8 @@
   "key": {
     "B": "minecraft:tuff",
     "G": "minecraft:glass",
-    "S": "minecraft:lava_bucket",
-    "T": "minecraft:flint"
+    "S": "minecraft:cobblestone",
+    "T": "minecraft:lava_bucket"
   },
   "pattern": [
     "GTG",

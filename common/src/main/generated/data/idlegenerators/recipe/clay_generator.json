@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "B": "minecraft:clay_ball",
+    "B": "minecraft:clay",
     "G": "minecraft:glass",
-    "S": "minecraft:dirt",
+    "S": "minecraft:cobblestone",
     "T": "minecraft:water_bucket"
   },
   "pattern": [

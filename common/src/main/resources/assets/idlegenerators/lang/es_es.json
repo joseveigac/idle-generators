@@ -39,6 +39,7 @@
 
   "text.autoconfig.idlegenerators.title": "Idle Generators",
   "text.autoconfig.idlegenerators.option.hudEnabled": "HUD al mirar un generador",
+  "text.autoconfig.idlegenerators.option.showHudWithJade": "Mostrar HUD con Jade instalado",
   "text.autoconfig.idlegenerators.option.dropContentsOnBreak": "Dropear el contenido al romper",
   "text.autoconfig.idlegenerators.option.productionSpeedMultiplier": "Multiplicador de velocidad de producción"
 }

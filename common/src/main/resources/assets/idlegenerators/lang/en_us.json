@@ -39,6 +39,7 @@
 
   "text.autoconfig.idlegenerators.title": "Idle Generators",
   "text.autoconfig.idlegenerators.option.hudEnabled": "HUD Enabled",
+  "text.autoconfig.idlegenerators.option.showHudWithJade": "Show HUD when Jade is installed",
   "text.autoconfig.idlegenerators.option.dropContentsOnBreak": "Drop Contents on Break",
   "text.autoconfig.idlegenerators.option.productionSpeedMultiplier": "Production Speed Multiplier"
 }

@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "B": "minecraft:pointed_dripstone",
+    "B": "minecraft:dripstone_block",
     "G": "minecraft:glass",
-    "S": "minecraft:stone",
+    "S": "minecraft:cobblestone",
     "T": "minecraft:water_bucket"
   },
   "pattern": [
