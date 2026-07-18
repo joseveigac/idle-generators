@@ -3,6 +3,19 @@ name: Publish to Modrinth + CurseForge
 on:
   release:
     types: [published]
+  # Manual per-store publishing: pick the store and the release tag whose jars/changelog
+  # to publish. Lets one store go live while the other is still awaiting approval.
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Store(s) to publish to'
+        type: choice
+        options: [both, curseforge, modrinth]
+        default: both
+        required: true
+      tag:
+        description: 'Release tag to publish (e.g. v1.2.0-26.2)'
+        required: true
 
 jobs:
   publish:
@@ -12,14 +25,36 @@ jobs:
     environment: publish
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
       - uses: actions/setup-java@v4
         with:
           java-version: '25'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v4
+      - name: Load changelog from the release body
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+        run: |
+          {
+            echo 'CHANGELOG<<CHANGELOG_EOF'
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              gh release view "${{ inputs.tag }}" --json body -q .body
+            else
+              printf '%s\n' "$RELEASE_BODY"
+            fi
+            echo 'CHANGELOG_EOF'
+          } >> "$GITHUB_ENV"
       - name: Publish mod files
-        run: chmod +x ./gradlew && ./gradlew publishMods
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
-          CHANGELOG: ${{ github.event.release.body }}
+        run: |
+          PLATFORM="${{ inputs.platform || 'both' }}"
+          case "$PLATFORM" in
+            curseforge) TASKS="publishCurseforgeFabric publishCurseforgeNeoforge" ;;
+            modrinth)   TASKS="publishModrinthFabric publishModrinthNeoforge" ;;
+            *)          TASKS="publishMods" ;;
+          esac
+          chmod +x ./gradlew && ./gradlew $TASKS -PpublishPlatform="$PLATFORM"
