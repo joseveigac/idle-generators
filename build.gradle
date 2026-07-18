@@ -97,13 +97,24 @@ subprojects {
 // Subprojects must be evaluated first so their remapJar tasks exist.
 evaluationDependsOnChildren()
 
+// Per-store readiness: a store only publishes for real when it has BOTH its token and a
+// real project ID. -PpublishPlatform=curseforge|modrinth (set by the workflow_dispatch in
+// publish.yml, which also restricts the Gradle tasks to that store) allows publishing to
+// one store while the other is still unapproved. Default 'both' keeps the old safety:
+// anything missing -> everything dry-runs.
+def modrinthNotReady = providers.environmentVariable('MODRINTH_TOKEN').getOrNull() == null \
+        || modrinth_project_id == 'TBD'
+def curseforgeNotReady = providers.environmentVariable('CURSEFORGE_TOKEN').getOrNull() == null \
+        || curseforge_project_id == 'TBD'
+def publishPlatform = providers.gradleProperty('publishPlatform').getOrElse('both')
+
 publishMods {
     changelog = providers.environmentVariable('CHANGELOG')
             .getOrElse('See the GitHub release for the full changelog.')
     type = STABLE
-    dryRun = providers.environmentVariable('MODRINTH_TOKEN').getOrNull() == null \
-            || providers.environmentVariable('CURSEFORGE_TOKEN').getOrNull() == null \
-            || modrinth_project_id == 'TBD' || curseforge_project_id == 'TBD'
+    dryRun = publishPlatform == 'curseforge' ? curseforgeNotReady
+            : publishPlatform == 'modrinth' ? modrinthNotReady
+            : (modrinthNotReady || curseforgeNotReady)
 
     def mrOptions = modrinthOptions {
         accessToken = providers.environmentVariable('MODRINTH_TOKEN')
