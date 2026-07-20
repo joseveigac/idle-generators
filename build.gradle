@@ -35,15 +35,11 @@ subprojects {
             name = 'shedaniel'
             url = 'https://maven.shedaniel.me/' // Cloth Config
         }
-        maven {
-            name = 'TerraformersMC'
-            url = 'https://maven.terraformersmc.com/releases/' // ModMenu
-        }
         exclusiveContent {
             forRepository {
                 maven {
                     name = 'Modrinth'
-                    url = 'https://api.modrinth.com/maven' // dev-only runtime mods (Iris/Sodium for the photo client)
+                    url = 'https://api.modrinth.com/maven' // ModMenu + dev-only runtime mods (Iris/Sodium for the photo client)
                 }
             }
             filter { includeGroup 'maven.modrinth' }

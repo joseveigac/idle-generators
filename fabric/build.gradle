@@ -65,8 +65,9 @@ dependencies {
     }
 
     // ModMenu — optional; gives the Mods list + config button on Fabric. Dev runtime only.
-    modCompileOnly "com.terraformersmc:modmenu:$rootProject.modmenu_version"
-    modLocalRuntime "com.terraformersmc:modmenu:$rootProject.modmenu_version"
+    // Resolved from the Modrinth maven: maven.terraformersmc.com served corrupt jars (2026-07-20).
+    modCompileOnly "maven.modrinth:modmenu:$rootProject.modmenu_version"
+    modLocalRuntime "maven.modrinth:modmenu:$rootProject.modmenu_version"
 
     // Jade — integración opcional (tooltip al mirar un generador). Dev runtime only.
     modCompileOnly "maven.modrinth:jade:$rootProject.jade_fabric_version"
