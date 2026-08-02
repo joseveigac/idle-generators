@@ -47,6 +47,10 @@
   "text.autoconfig.idlegenerators.option.oresEnabled": "Ore generators enabled",
   "text.autoconfig.idlegenerators.option.woodsEnabled": "Wood generators enabled",
   "text.autoconfig.idlegenerators.option.stonesEnabled": "Stone generators enabled",
-  "text.autoconfig.idlegenerators.option.enabledGenerators": "Force-enabled generators (keys)",
-  "text.autoconfig.idlegenerators.option.disabledGenerators": "Disabled generators (keys)"
+  "text.autoconfig.idlegenerators.category.ores": "Ore generators — individual",
+  "text.autoconfig.idlegenerators.category.woods": "Wood generators — individual",
+  "text.autoconfig.idlegenerators.category.stones": "Stone generators — individual",
+  "text.autoconfig.idlegenerators.toggle.default": "Category default",
+  "text.autoconfig.idlegenerators.toggle.on": "Forced ON",
+  "text.autoconfig.idlegenerators.toggle.off": "Forced OFF"
 }
