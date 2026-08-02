@@ -50,6 +50,8 @@ public class IGJadePlugin implements IWailaPlugin {
                 // refresca los server data cada varios ticks y el % se vería a saltos).
                 data.putLong("igLast", s.settledLastInteraction());
                 data.putLong("igInterval", be.effectiveIntervalMs());
+                // La config del SERVIDOR manda: el cliente solo pinta el estado.
+                if (!be.isEnabledByConfig()) data.putBoolean("igDisabled", true);
             }
         }
     }
@@ -64,6 +66,11 @@ public class IGJadePlugin implements IWailaPlugin {
             if (data.contains("igProduced")) {
                 int produced = data.getIntOr("igProduced", 0);
                 int cap = data.getIntOr("igCap", 0);
+                if (data.getBooleanOr("igDisabled", false)) {
+                    tooltip.add(Component.translatable("hud.idlegenerators.status_short_disabled",
+                            produced, cap));
+                    return;
+                }
                 long last = data.getLongOr("igLast", 0L);
                 long interval = Math.max(1L, data.getLongOr("igInterval", 1L));
                 // Extrapolación en vivo (appendTooltip corre cada frame): en singleplayer

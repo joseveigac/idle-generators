@@ -2,6 +2,9 @@
   "itemGroup.idlegenerators.tab": "Idle Generators",
   "hud.idlegenerators.status": "%s | %s/%s | %s%%",
   "hud.idlegenerators.status_short": "%s/%s | %s%%",
+  "hud.idlegenerators.status_disabled": "%s | %s/%s | OFF",
+  "hud.idlegenerators.status_short_disabled": "%s/%s | OFF",
+  "tooltip.idlegenerators.disabled": "Desactivado por configuración",
   "config.jade.plugin_idlegenerators.generator": "Estado del generador",
 
   "block.idlegenerators.cobblestone_generator": "Generador de Roca",
@@ -41,5 +44,10 @@
   "text.autoconfig.idlegenerators.option.hudEnabled": "HUD al mirar un generador",
   "text.autoconfig.idlegenerators.option.showHudWithJade": "Mostrar HUD con Jade instalado",
   "text.autoconfig.idlegenerators.option.dropContentsOnBreak": "Dropear el contenido al romper",
-  "text.autoconfig.idlegenerators.option.productionSpeedMultiplier": "Multiplicador de velocidad de producción"
+  "text.autoconfig.idlegenerators.option.productionSpeedMultiplier": "Multiplicador de velocidad de producción",
+  "text.autoconfig.idlegenerators.option.oresEnabled": "Generadores de minerales activos",
+  "text.autoconfig.idlegenerators.option.woodsEnabled": "Generadores de madera activos",
+  "text.autoconfig.idlegenerators.option.stonesEnabled": "Generadores de piedra activos",
+  "text.autoconfig.idlegenerators.option.enabledGenerators": "Generadores forzados a ON (claves)",
+  "text.autoconfig.idlegenerators.option.disabledGenerators": "Generadores desactivados (claves)"
 }

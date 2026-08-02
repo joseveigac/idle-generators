@@ -1,11 +1,11 @@
 package com.ghozix.idlegenerators.registry;
 
 import com.ghozix.idlegenerators.IdleGenerators;
+import com.ghozix.idlegenerators.generator.GeneratorBlockItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 
 public final class ModItems {
@@ -18,7 +18,7 @@ public final class ModItems {
         ModBlocks.GENERATORS.forEach((key, block) -> {
             String itemId = key + "_generator";
             ITEMS.register(itemId, () ->
-                new BlockItem(block.get(), new Item.Properties()
+                new GeneratorBlockItem(block.get(), new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM,
                         Identifier.fromNamespaceAndPath(IdleGenerators.MOD_ID, itemId)))
                     // 26.x: el BlockItem ya NO hereda el nombre del bloque; sin esto el
