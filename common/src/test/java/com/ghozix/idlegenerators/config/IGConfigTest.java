@@ -19,7 +19,7 @@ class IGConfigTest {
         assertEquals(1.0, c.productionSpeedMultiplier);
     }
 
-    // ── toggles de generadores (v1.3.0) ──
+    // ── toggles de generadores (v1.3.0): tri-estado por generador + toggle de categoría ──
 
     @Test void allGeneratorsEnabledByDefault() {
         IGConfig c = new IGConfig();
@@ -35,34 +35,36 @@ class IGConfigTest {
         assertTrue(c.isGeneratorEnabled("oak_log", GeneratorCategory.WOODS));
     }
 
-    @Test void individualDisableOverridesEnabledCategory() {
+    @Test void forcedOffOverridesEnabledCategory() {
         IGConfig c = new IGConfig();
-        c.disabledGenerators.add("diamond");
+        c.generators.put("diamond", GeneratorToggle.OFF);
         assertFalse(c.isGeneratorEnabled("diamond", GeneratorCategory.ORES));
         assertTrue(c.isGeneratorEnabled("iron", GeneratorCategory.ORES));
     }
 
-    @Test void individualEnableOverridesDisabledCategory() {
+    @Test void forcedOnOverridesDisabledCategory() {
         IGConfig c = new IGConfig();
         c.oresEnabled = false;
-        c.enabledGenerators.add("iron");
+        c.generators.put("iron", GeneratorToggle.ON);
         assertTrue(c.isGeneratorEnabled("iron", GeneratorCategory.ORES));
         assertFalse(c.isGeneratorEnabled("diamond", GeneratorCategory.ORES));
     }
 
-    @Test void enabledListWinsIfKeyIsInBothLists() {
+    @Test void ensureAllKeysPopulatesMissingAsDefault() {
         IGConfig c = new IGConfig();
-        c.enabledGenerators.add("iron");
-        c.disabledGenerators.add("iron");
-        assertTrue(c.isGeneratorEnabled("iron", GeneratorCategory.ORES));
+        c.generators.put("iron", GeneratorToggle.OFF);
+        c.ensureAllKeys(java.util.List.of("iron", "coal"));
+        assertEquals(GeneratorToggle.OFF, c.generators.get("iron")); // no pisa lo existente
+        assertEquals(GeneratorToggle.DEFAULT, c.generators.get("coal"));
     }
 
-    @Test void nullListsAreNormalizedOnValidate() throws Exception {
+    @Test void nullMapAndValuesAreNormalizedOnValidate() throws Exception {
         IGConfig c = new IGConfig();
-        c.enabledGenerators = null;
-        c.disabledGenerators = null;
+        c.generators = null;
         c.validatePostLoad();
-        assertNotNull(c.enabledGenerators);
-        assertNotNull(c.disabledGenerators);
+        assertNotNull(c.generators);
+        c.generators.put("iron", null); // Gson deja null los valores desconocidos del JSON
+        c.validatePostLoad();
+        assertEquals(GeneratorToggle.DEFAULT, c.generators.get("iron"));
     }
 }

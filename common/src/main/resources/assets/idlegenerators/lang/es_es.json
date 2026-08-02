@@ -48,6 +48,10 @@
   "text.autoconfig.idlegenerators.option.oresEnabled": "Generadores de minerales activos",
   "text.autoconfig.idlegenerators.option.woodsEnabled": "Generadores de madera activos",
   "text.autoconfig.idlegenerators.option.stonesEnabled": "Generadores de piedra activos",
-  "text.autoconfig.idlegenerators.option.enabledGenerators": "Generadores forzados a ON (claves)",
-  "text.autoconfig.idlegenerators.option.disabledGenerators": "Generadores desactivados (claves)"
+  "text.autoconfig.idlegenerators.category.ores": "Generadores de minerales — individual",
+  "text.autoconfig.idlegenerators.category.woods": "Generadores de madera — individual",
+  "text.autoconfig.idlegenerators.category.stones": "Generadores de piedra — individual",
+  "text.autoconfig.idlegenerators.toggle.default": "Según categoría",
+  "text.autoconfig.idlegenerators.toggle.on": "Forzado ON",
+  "text.autoconfig.idlegenerators.toggle.off": "Forzado OFF"
 }

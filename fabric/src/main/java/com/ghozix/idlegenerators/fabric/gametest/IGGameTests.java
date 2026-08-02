@@ -1,5 +1,6 @@
 package com.ghozix.idlegenerators.fabric.gametest;
 
+import com.ghozix.idlegenerators.config.GeneratorToggle;
 import com.ghozix.idlegenerators.config.IGConfig;
 import com.ghozix.idlegenerators.generator.GeneratorBlockEntity;
 import com.ghozix.idlegenerators.registry.ModBlocks;
@@ -100,11 +101,11 @@ public class IGGameTests {
         BlockPos coalPos = new BlockPos(3, 1, 1);
         GeneratorBlockEntity diamond = place(helper, "diamond", diamondPos, 10 * 80_000L);
         GeneratorBlockEntity coal = place(helper, "coal", coalPos, 10 * 20_000L);
-        IGConfig.get().disabledGenerators.add("diamond");
+        IGConfig.get().generators.put("diamond", GeneratorToggle.OFF);
         helper.runAfterDelay(10, () -> {
             int diamondStored = diamond.getStoredAmount();
             int coalStored = coal.getStoredAmount();
-            IGConfig.get().disabledGenerators.remove("diamond");
+            IGConfig.get().generators.put("diamond", GeneratorToggle.DEFAULT);
             if (coalStored == 0) helper.fail("enabled coal generator produced nothing (ticker missing?)");
             if (diamondStored != 0) helper.fail("disabled diamond generator produced " + diamondStored);
             // Reactivado: el progreso quedó a cero, no hay regalo retroactivo.

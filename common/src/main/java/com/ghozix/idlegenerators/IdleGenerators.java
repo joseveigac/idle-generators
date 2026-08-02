@@ -1,6 +1,8 @@
 package com.ghozix.idlegenerators;
 
 import com.ghozix.idlegenerators.config.IGConfig;
+import com.ghozix.idlegenerators.generator.GeneratorType;
+import com.ghozix.idlegenerators.generator.GeneratorTypes;
 import com.ghozix.idlegenerators.hud.GeneratorHud;
 import com.ghozix.idlegenerators.registry.ModBlocks;
 import com.ghozix.idlegenerators.registry.ModItems;
@@ -13,7 +15,10 @@ public final class IdleGenerators {
     public static final String MOD_ID = "idlegenerators";
 
     public static void init() {
-        AutoConfig.register(IGConfig.class, GsonConfigSerializer::new);
+        var holder = AutoConfig.register(IGConfig.class, GsonConfigSerializer::new);
+        // El JSON lista todos los generadores con su tri-estado (DEFAULT si no existía).
+        holder.getConfig().ensureAllKeys(GeneratorTypes.ALL.stream().map(GeneratorType::key).toList());
+        holder.save();
         ModCreativeTab.register();
         ModBlocks.register();
         ModItems.register();

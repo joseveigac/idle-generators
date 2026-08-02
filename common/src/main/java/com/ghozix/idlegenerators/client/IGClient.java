@@ -17,5 +17,8 @@ public final class IGClient {
         // de dependencias), así que un listener registrado aquí no llega a verlo.
         ModBlockEntities.GENERATOR.listen(type ->
                 BlockEntityRendererRegistry.register(type, ctx -> new GeneratorCoreRenderer(ctx)));
+
+        // v1.3.0: la GUI del mapa de toggles (desplegables por categoría) es un provider custom.
+        IGConfigGui.register();
     }
 }
