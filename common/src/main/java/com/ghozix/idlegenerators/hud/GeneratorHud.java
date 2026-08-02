@@ -31,6 +31,12 @@ public final class GeneratorHud {
             long now = System.currentTimeMillis();
             var s = be.settleView(now);
             int cap = be.type().cap();
+            if (!be.isEnabledByConfig()) {
+                sp.sendOverlayMessage(Component.translatable("hud.idlegenerators.status_disabled",
+                        Component.translatable(be.getBlockState().getBlock().getDescriptionId()),
+                        s.produced(), cap));
+                return;
+            }
             // Paridad Bedrock: % = progreso hacia el SIGUIENTE item (sube en tiempo real),
             // equivalente a floor((elapsed % interval) / interval * 100) del addon original.
             long intervalMs = be.effectiveIntervalMs();

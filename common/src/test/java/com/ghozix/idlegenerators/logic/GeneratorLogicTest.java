@@ -65,6 +65,32 @@ class GeneratorLogicTest {
         assertThrows(IllegalArgumentException.class, () -> GeneratorLogic.settle(1_000L, 0L, 0, 512, -5_000L));
     }
 
+    // ── reparto a slots (v1.3.0) ──
+
+    @Test void distributeFillsSlotsLeftToRight() {
+        assertArrayEquals(new int[]{64, 6, 0}, GeneratorLogic.distribute(new int[]{0, 0, 0}, 64, 70));
+    }
+
+    @Test void distributeContinuesPartialSlot() {
+        assertArrayEquals(new int[]{64, 6}, GeneratorLogic.distribute(new int[]{60, 0}, 64, 10));
+    }
+
+    @Test void distributeZeroIsNoOp() {
+        assertArrayEquals(new int[]{5, 0}, GeneratorLogic.distribute(new int[]{5, 0}, 64, 0));
+    }
+
+    @Test void distributeDiscardsSurplusBeyondCapacity() {
+        // settle nunca genera delta > hueco libre (cap = slots*capacidad), pero
+        // el contrato queda definido: el excedente se descarta.
+        assertArrayEquals(new int[]{64, 64}, GeneratorLogic.distribute(new int[]{64, 60}, 64, 100));
+    }
+
+    @Test void distributeDoesNotMutateInput() {
+        int[] in = {0, 0};
+        GeneratorLogic.distribute(in, 64, 10);
+        assertArrayEquals(new int[]{0, 0}, in);
+    }
+
     @Test void cappedBufferStopsAccumulatingButKeepsTimestampFresh() {
         // Con el buffer al cap, lastInteraction debe seguir avanzando para no
         // acumular "ciclos fantasma" que se cobrarían tras retirar.
