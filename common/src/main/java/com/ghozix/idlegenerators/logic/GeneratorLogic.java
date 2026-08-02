@@ -29,6 +29,19 @@ public final class GeneratorLogic {
         return new Settle((int) produced, lastInteractionMs + cycles * intervalMs);
     }
 
+    /** Reparte {@code amount} en los slots de izquierda a derecha (sin mutar la entrada);
+     *  el excedente que no quepa se descarta. */
+    public static int[] distribute(int[] slotCounts, int slotCapacity, int amount) {
+        int[] out = slotCounts.clone();
+        for (int i = 0; i < out.length && amount > 0; i++) {
+            int add = Math.min(slotCapacity - out[i], amount);
+            if (add <= 0) continue;
+            out[i] += add;
+            amount -= add;
+        }
+        return out;
+    }
+
     public static Withdraw withdraw(long nowMs, long lastInteractionMs, int stored, int cap, long intervalMs, int requested) {
         Settle s = settle(nowMs, lastInteractionMs, stored, cap, intervalMs);
         int collected = Math.min(s.produced(), Math.max(0, requested));
