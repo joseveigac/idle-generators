@@ -6,13 +6,15 @@ Idle Generators adds 31 craftable block-generators that produce resources passiv
 
 ## Features
 
-- **31 generators** — 11 mineral types, 8 wood types and 12 stone & construction types, each with a configurable production interval and cap.
+- **31 generators** — 11 mineral types, 8 wood types and 12 stone & construction types, each with its own production interval and buffer cap (see the table below).
 - **Offline production** — generators use real-world timestamps so items accumulate while the game is closed.
 - **Action-bar HUD** — live buffer readout (items stored / cap) updates every tick when you look at a generator.
 - **Collect or break** — right-click to collect without breaking; break the block to get the buffer plus the block itself.
 - **Animated core renderer** — the generator block displays a rotating animated core whose appearance reflects the output type.
 - **Optional Jade support** — look-at tooltip shows buffer status when [Jade](https://modrinth.com/mod/jade) is installed.
-- **Cloth Config integration** — per-generator intervals and caps are fully configurable in-game.
+- **Hopper and pipe output** — the buffer is a real inventory: hoppers, droppers and mod pipes can pull from any side. Insertion is blocked; a comparator reads buffer fullness 0–15.
+- **Turn generators off — or take them out of the game** — toggle a whole category (ores / woods / stones) or override any single generator to forced ON / forced OFF. A disabled generator loses its recipe and disappears from the recipe book, the creative tab and the JEI/EMI/REI item list. Generators already placed in the world are never destroyed: they just stop producing and can still be emptied.
+- **Cloth Config integration** — in-game config screen for the HUD, a global production speed multiplier, drop-on-break, and the per-generator toggles. On a server, edit `config/idlegenerators.json` and run `/reload` to apply changes without a restart.
 
 ## Generators
 

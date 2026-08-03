@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.3.0 — Automation & Control
+
+Generators can now be piped into hoppers, and server owners can turn any generator off — or take it out of the game entirely.
+
+**Automation**
+
+- **Hopper and pipe output** — the buffer is exposed as a real inventory, so hoppers, droppers and mod pipes can pull items out of a generator from any side. Insertion stays blocked: a generator produces, it does not store what you put in.
+- **Comparator output** — a comparator reading a generator reports buffer fullness on the usual 0–15 scale.
+- Right-clicking to collect and breaking the block still work exactly as before.
+
+**Per-generator control**
+
+- **Category toggles** — turn ore, wood or stone generators on or off as a group.
+- **Per-generator override** — each of the 31 generators has its own three-state setting: follow the category, force ON, or force OFF. The config screen shows them as a dropdown per category, so there are no raw keys to type.
+- **Disabled generators are out of the game, not just idle** — a disabled generator loses its recipe, disappears from the recipe book, from the creative tab and from the item list of JEI, EMI and REI. Its tooltip says so in red.
+- **Already-placed generators are never destroyed.** Blocks and items are never unregistered, so an existing world keeps working: a disabled generator simply stops producing, and its buffer can still be emptied by hand or by hopper. You can still place one you already own.
+- **Hot reload** — edit `config/idlegenerators.json` on a server and run `/reload`; the change applies without a restart. On a dedicated server, what counts is the server's config: connected clients are told which generators are disabled, so everyone sees the same thing.
+
+**Timing note:** production, the HUD and Jade react instantly. Recipes, the creative tab, the recipe viewers and the tooltip update when you join the world or on `/reload`.
+
 ## 1.2.0 — Minecraft 1.21.1
 
 Stone & Construction update: 12 new generators (31 total). Suggested in part by community feedback on the Bedrock edition page (deepslate for skyblock).
