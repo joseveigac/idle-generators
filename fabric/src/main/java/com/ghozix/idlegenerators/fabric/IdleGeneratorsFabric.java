@@ -1,6 +1,7 @@
 package com.ghozix.idlegenerators.fabric;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.fabricmc.fabric.api.transfer.v1.item.ContainerStorage;
 import net.fabricmc.fabric.api.transfer.v1.item.ItemStorage;
 
@@ -16,6 +17,9 @@ public final class IdleGeneratorsFabric implements ModInitializer {
 
         // Run our common setup.
         IdleGenerators.init();
+
+        // v1.3.0 R4: condición de carga de recetas. Aquí, antes de que se carguen datapacks.
+        ResourceConditions.register(GeneratorEnabledCondition.TYPE);
 
         // v1.3.0: expone el buffer a tubos Fabric (las tolvas vanilla ya ven el WorldlyContainer).
         // La inserción queda bloqueada por canPlaceItem/canPlaceItemThroughFace del BE.
