@@ -7,5 +7,7 @@ eclipse/
 run/
 runs/
 run-photo/
+# GeneratorTypesTest arranca Bootstrap de vanilla → el logger de MC crea common/logs/
+logs/
 .DS_Store
 Thumbs.db
