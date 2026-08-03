@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:bone_meal"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:bone_meal"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "L": {
+            "item": "minecraft:oak_log"
+        },
+        "S": {
+            "item": "minecraft:oak_sapling"
+        }
     },
-    "G": {
-      "item": "minecraft:glass"
+    "pattern": [
+        "GBG",
+        "SLS",
+        "GSG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:oak_log_generator"
     },
-    "L": {
-      "item": "minecraft:oak_log"
-    },
-    "S": {
-      "item": "minecraft:oak_sapling"
-    }
-  },
-  "pattern": [
-    "GBG",
-    "SLS",
-    "GSG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:oak_log_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "oak_log"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "oak_log"
+        }
+    ]
 }

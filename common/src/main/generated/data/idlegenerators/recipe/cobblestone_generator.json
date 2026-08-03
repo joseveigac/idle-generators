@@ -1,30 +1,42 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "G": {
-      "item": "minecraft:glass"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "L": {
+            "item": "minecraft:lava_bucket"
+        },
+        "P": {
+            "item": "minecraft:stone_pickaxe"
+        },
+        "S": {
+            "item": "minecraft:smooth_stone"
+        },
+        "W": {
+            "item": "minecraft:water_bucket"
+        }
     },
-    "L": {
-      "item": "minecraft:lava_bucket"
+    "pattern": [
+        "GPG",
+        "LSW",
+        "GPG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:cobblestone_generator"
     },
-    "P": {
-      "item": "minecraft:stone_pickaxe"
-    },
-    "S": {
-      "item": "minecraft:smooth_stone"
-    },
-    "W": {
-      "item": "minecraft:water_bucket"
-    }
-  },
-  "pattern": [
-    "GPG",
-    "LSW",
-    "GPG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:cobblestone_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "cobblestone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "cobblestone"
+        }
+    ]
 }

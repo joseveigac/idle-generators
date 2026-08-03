@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_granite": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:granite"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_granite": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:granite"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:granite_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:granite_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_granite"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_granite"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:granite_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "granite"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "granite"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:granite_generator"
-    ]
-  }
 }

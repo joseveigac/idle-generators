@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_birch_log": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:birch_log"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_birch_log": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:birch_log"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:birch_log_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:birch_log_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_birch_log"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_birch_log"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:birch_log_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "birch_log"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "birch_log"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:birch_log_generator"
-    ]
-  }
 }

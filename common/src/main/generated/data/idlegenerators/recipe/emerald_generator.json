@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:emerald_block"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:emerald_block"
+        },
+        "C": {
+            "item": "minecraft:bookshelf"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "Q": {
+            "item": "minecraft:bell"
+        }
     },
-    "C": {
-      "item": "minecraft:bookshelf"
+    "pattern": [
+        "GQG",
+        "CBC",
+        "GCG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:emerald_generator"
     },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "Q": {
-      "item": "minecraft:bell"
-    }
-  },
-  "pattern": [
-    "GQG",
-    "CBC",
-    "GCG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:emerald_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "emerald"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "emerald"
+        }
+    ]
 }

@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:andesite"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:andesite"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "S": {
+            "item": "minecraft:cobblestone"
+        },
+        "T": {
+            "item": "minecraft:stone_pickaxe"
+        }
     },
-    "G": {
-      "item": "minecraft:glass"
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:andesite_generator"
     },
-    "S": {
-      "item": "minecraft:cobblestone"
-    },
-    "T": {
-      "item": "minecraft:stone_pickaxe"
-    }
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:andesite_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "andesite"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "andesite"
+        }
+    ]
 }

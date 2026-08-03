@@ -1,24 +1,36 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:blaze_rod"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:blaze_rod"
+        },
+        "C": {
+            "item": "minecraft:gold_block"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        }
     },
-    "C": {
-      "item": "minecraft:gold_block"
+    "pattern": [
+        "GBG",
+        "BCB",
+        "GBG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:gold_generator"
     },
-    "G": {
-      "item": "minecraft:glass"
-    }
-  },
-  "pattern": [
-    "GBG",
-    "BCB",
-    "GBG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:gold_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "gold"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "gold"
+        }
+    ]
 }

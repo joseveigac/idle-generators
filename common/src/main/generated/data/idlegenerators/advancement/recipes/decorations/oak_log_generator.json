@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_oak_log": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:oak_log"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_oak_log": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:oak_log"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:oak_log_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:oak_log_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_oak_log"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_oak_log"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:oak_log_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "oak_log"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "oak_log"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:oak_log_generator"
-    ]
-  }
 }

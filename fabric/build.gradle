@@ -33,6 +33,48 @@ loom {
     }
 }
 
+// v1.3.0 R4: el datagen de Fabric produce las recetas que comparten ambos loaders, así que las
+// condiciones de carga se inyectan sobre su salida, con LAS DOS claves en el mismo JSON. Está
+// verificado empíricamente (probe 2026-08-02) que cada loader ignora la clave del otro sin
+// quejarse, y las claves y discriminadores salen de javap sobre los jars (spike S2, 2026-08-04):
+//   Fabric   → "fabric:load_conditions", discriminador "condition"  (ResourceConditions.CONDITIONS_KEY)
+//   NeoForge → "neoforge:conditions",    discriminador "type"       (literal en ICondition)
+//
+// Es una TASK APARTE y no un doLast de runDatagen a propósito: en esta máquina runDatagen escribe
+// sus salidas y luego NO sale (TransformerRuntime colgado, ver porting.md §"runDatagen may not
+// exit"), así que hay que matarlo a mano y ningún doLast/finalizedBy suyo llegaría a ejecutarse.
+// Flujo: runDatagen → (matar el JVM colgado si hace falta) → injectLoadConditions.
+// Es idempotente: reinyecta sobre lo ya inyectado sin duplicar.
+tasks.register('injectLoadConditions') {
+    group = 'idlegenerators'
+    description = 'Inyecta las condiciones de carga (Fabric + NeoForge) en las recetas generadas'
+    outputs.upToDateWhen { false } // barato y idempotente; nunca conviene saltárselo
+    doLast {
+        def genRoot = file(datagenOutputDir)
+        def targets = [
+            new File(genRoot, 'data/idlegenerators/recipe'),
+            new File(genRoot, 'data/idlegenerators/advancement/recipes/decorations')
+        ]
+        targets.each { dir ->
+            if (!dir.isDirectory()) throw new GradleException("injectLoadConditions: no existe ${dir}")
+            def total = 0, patched = 0
+            dir.eachFileMatch(~/.*_generator\.json/) { f ->
+                total++
+                def key = f.name - '_generator.json'
+                def json = new groovy.json.JsonSlurper().parse(f)
+                json['neoforge:conditions'] = [[type: 'idlegenerators:generator_enabled', generator: key]]
+                json['fabric:load_conditions'] = [[condition: 'idlegenerators:generator_enabled', generator: key]]
+                f.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(json)) + '\n'
+                patched++
+            }
+            // Gate: cada fichero *_generator.json de la carpeta tiene que quedar con las dos claves.
+            if (total == 0) throw new GradleException("injectLoadConditions: 0 ficheros en ${dir.name}")
+            if (total != patched) throw new GradleException("injectLoadConditions: ${patched}/${total} en ${dir.name}")
+            logger.lifecycle("injectLoadConditions: ${patched}/${total} en ${dir.name}")
+        }
+    }
+}
+
 configurations {
     common {
         canBeResolved = true

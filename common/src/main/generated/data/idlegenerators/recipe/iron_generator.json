@@ -1,24 +1,36 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:iron_block"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:iron_block"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "P": {
+            "item": "minecraft:iron_pickaxe"
+        }
     },
-    "G": {
-      "item": "minecraft:glass"
+    "pattern": [
+        "GPG",
+        "PBP",
+        "GPG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:iron_generator"
     },
-    "P": {
-      "item": "minecraft:iron_pickaxe"
-    }
-  },
-  "pattern": [
-    "GPG",
-    "PBP",
-    "GPG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:iron_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "iron"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "iron"
+        }
+    ]
 }

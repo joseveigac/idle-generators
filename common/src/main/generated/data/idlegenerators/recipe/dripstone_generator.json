@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:dripstone_block"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:dripstone_block"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "S": {
+            "item": "minecraft:cobblestone"
+        },
+        "T": {
+            "item": "minecraft:water_bucket"
+        }
     },
-    "G": {
-      "item": "minecraft:glass"
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:dripstone_generator"
     },
-    "S": {
-      "item": "minecraft:cobblestone"
-    },
-    "T": {
-      "item": "minecraft:water_bucket"
-    }
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:dripstone_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "dripstone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "dripstone"
+        }
+    ]
 }

@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:tuff"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:tuff"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "S": {
+            "item": "minecraft:cobblestone"
+        },
+        "T": {
+            "item": "minecraft:lava_bucket"
+        }
     },
-    "G": {
-      "item": "minecraft:glass"
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:tuff_generator"
     },
-    "S": {
-      "item": "minecraft:cobblestone"
-    },
-    "T": {
-      "item": "minecraft:lava_bucket"
-    }
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:tuff_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "tuff"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "tuff"
+        }
+    ]
 }

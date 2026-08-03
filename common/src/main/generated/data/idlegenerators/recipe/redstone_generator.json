@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:redstone_block"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:redstone_block"
+        },
+        "C": {
+            "item": "minecraft:comparator"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "Q": {
+            "item": "minecraft:quartz"
+        }
     },
-    "C": {
-      "item": "minecraft:comparator"
+    "pattern": [
+        "GQG",
+        "CBC",
+        "GQG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:redstone_generator"
     },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "Q": {
-      "item": "minecraft:quartz"
-    }
-  },
-  "pattern": [
-    "GQG",
-    "CBC",
-    "GQG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:redstone_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "redstone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "redstone"
+        }
+    ]
 }

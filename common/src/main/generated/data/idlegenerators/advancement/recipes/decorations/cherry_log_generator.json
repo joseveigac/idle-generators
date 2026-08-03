@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_cherry_log": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:cherry_log"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_cherry_log": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:cherry_log"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:cherry_log_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:cherry_log_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_cherry_log"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_cherry_log"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:cherry_log_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "cherry_log"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "cherry_log"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:cherry_log_generator"
-    ]
-  }
 }

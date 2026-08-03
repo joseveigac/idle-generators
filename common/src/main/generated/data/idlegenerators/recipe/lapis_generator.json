@@ -1,27 +1,39 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "B": {
-      "item": "minecraft:lapis_block"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:lapis_block"
+        },
+        "C": {
+            "item": "minecraft:prismarine_crystals"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "Q": {
+            "item": "minecraft:prismarine_shard"
+        }
     },
-    "C": {
-      "item": "minecraft:prismarine_crystals"
+    "pattern": [
+        "GQG",
+        "CBC",
+        "GQG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:lapis_generator"
     },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "Q": {
-      "item": "minecraft:prismarine_shard"
-    }
-  },
-  "pattern": [
-    "GQG",
-    "CBC",
-    "GQG"
-  ],
-  "result": {
-    "count": 1,
-    "id": "idlegenerators:lapis_generator"
-  }
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "lapis"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "lapis"
+        }
+    ]
 }
