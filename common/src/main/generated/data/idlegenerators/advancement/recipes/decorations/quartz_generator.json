@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_quartz": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:quartz"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_quartz": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:quartz"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:quartz_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:quartz_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_quartz"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_quartz"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:quartz_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "quartz"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "quartz"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:quartz_generator"
-    ]
-  }
 }

@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_clay": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:clay"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_clay": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:clay"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:clay_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:clay_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_clay"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_clay"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:clay_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "clay"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "clay"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:clay_generator"
-    ]
-  }
 }

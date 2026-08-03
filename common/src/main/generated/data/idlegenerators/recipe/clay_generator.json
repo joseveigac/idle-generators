@@ -1,17 +1,29 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:clay",
-    "G": "minecraft:glass",
-    "S": "minecraft:cobblestone",
-    "T": "minecraft:water_bucket"
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "id": "idlegenerators:clay_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:clay",
+        "G": "minecraft:glass",
+        "S": "minecraft:cobblestone",
+        "T": "minecraft:water_bucket"
+    },
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:clay_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "clay"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "clay"
+        }
+    ]
 }

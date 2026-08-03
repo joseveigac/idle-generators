@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_dripstone": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:dripstone_block"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_dripstone": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:dripstone_block"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:dripstone_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:dripstone_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_dripstone"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_dripstone"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:dripstone_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "dripstone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "dripstone"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:dripstone_generator"
-    ]
-  }
 }

@@ -1,16 +1,28 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:diamond_block",
-    "G": "minecraft:glass",
-    "O": "minecraft:crying_obsidian"
-  },
-  "pattern": [
-    "GOG",
-    "OBO",
-    "GOG"
-  ],
-  "result": {
-    "id": "idlegenerators:diamond_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:diamond_block",
+        "G": "minecraft:glass",
+        "O": "minecraft:crying_obsidian"
+    },
+    "pattern": [
+        "GOG",
+        "OBO",
+        "GOG"
+    ],
+    "result": {
+        "id": "idlegenerators:diamond_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "diamond"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "diamond"
+        }
+    ]
 }

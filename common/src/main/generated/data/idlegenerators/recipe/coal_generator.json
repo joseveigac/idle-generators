@@ -1,16 +1,28 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:coal_block",
-    "F": "minecraft:furnace",
-    "G": "minecraft:glass"
-  },
-  "pattern": [
-    "GFG",
-    "FBF",
-    "GFG"
-  ],
-  "result": {
-    "id": "idlegenerators:coal_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:coal_block",
+        "F": "minecraft:furnace",
+        "G": "minecraft:glass"
+    },
+    "pattern": [
+        "GFG",
+        "FBF",
+        "GFG"
+    ],
+    "result": {
+        "id": "idlegenerators:coal_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "coal"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "coal"
+        }
+    ]
 }
