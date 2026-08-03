@@ -3,6 +3,7 @@ package com.ghozix.idlegenerators.neoforge;
 import com.ghozix.idlegenerators.IdleGenerators;
 import com.ghozix.idlegenerators.client.IGClient;
 import com.ghozix.idlegenerators.config.IGConfig;
+import com.ghozix.idlegenerators.config.IGConfigReload;
 import com.ghozix.idlegenerators.registry.ModBlockEntities;
 import com.mojang.serialization.MapCodec;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -14,7 +15,9 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.items.wrapper.SidedInvWrapper;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -35,6 +38,14 @@ public final class IdleGeneratorsNeoForge {
 
         CONDITION_CODECS.register(modBus);
         modBus.addListener(IdleGeneratorsNeoForge::registerCapabilities);
+
+        // v1.3.0 R4: releer la config antes de que /reload evalúe las condiciones. Este evento del
+        // game bus se dispara al construir la lista de listeners, antes de ejecutar la recarga; el
+        // prepareSharedState del listener de Architectury NO vale — ver IGConfigReload.
+        // (En 1.21.1 el evento se llama AddReloadListenerEvent; 26.x lo renombró a
+        // AddServerReloadListenersEvent.)
+        NeoForge.EVENT_BUS.addListener(AddReloadListenerEvent.class,
+                event -> IGConfigReload.reloadConfigFromDisk());
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             IGClient.init();
