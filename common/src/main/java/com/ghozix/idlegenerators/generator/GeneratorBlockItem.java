@@ -1,6 +1,6 @@
 package com.ghozix.idlegenerators.generator;
 
-import com.ghozix.idlegenerators.config.IGConfig;
+import com.ghozix.idlegenerators.config.ClientToggles;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
@@ -23,7 +23,9 @@ public class GeneratorBlockItem extends BlockItem {
                                 Consumer<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, context, display, tooltip, flag);
         GeneratorType type = ((GeneratorBlock) getBlock()).type();
-        if (!IGConfig.get().isGeneratorEnabled(type.key(), type.category())) {
+        // El estado viene del SERVIDOR (S2C al login), no de la config local: en un dedicado la
+        // config del jugador no tiene nada que ver con la que manda.
+        if (ClientToggles.isDisabled(type.key())) {
             tooltip.accept(Component.translatable("tooltip.idlegenerators.disabled")
                     .withStyle(ChatFormatting.RED));
         }
