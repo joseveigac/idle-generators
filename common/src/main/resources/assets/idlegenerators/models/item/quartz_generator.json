@@ -1,6 +1,6 @@
 {
-  "parent": "idlegenerators:block/generator_base",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "gen": "idlegenerators:block/quartz_generator"
+    "layer0": "idlegenerators:item/quartz_generator"
   }
 }

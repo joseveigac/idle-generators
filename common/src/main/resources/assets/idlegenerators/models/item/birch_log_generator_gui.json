@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "idlegenerators:item/birch_log_generator"
-  }
-}
