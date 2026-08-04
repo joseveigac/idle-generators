@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/green_dye_generator_frame"
+    }
+  }
+}

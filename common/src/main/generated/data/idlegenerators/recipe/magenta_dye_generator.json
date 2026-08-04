@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:bone_meal"
+        },
+        "D": {
+            "item": "minecraft:magenta_dye"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "T": {
+            "item": "minecraft:lilac"
+        }
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:magenta_dye_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "magenta_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "magenta_dye"
+        }
+    ]
+}

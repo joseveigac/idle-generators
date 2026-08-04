@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:bone_meal"
+        },
+        "D": {
+            "item": "minecraft:yellow_dye"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "T": {
+            "item": "minecraft:dandelion"
+        }
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:yellow_dye_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "yellow_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "yellow_dye"
+        }
+    ]
+}

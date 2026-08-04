@@ -1,0 +1,44 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_cyan_dye": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:cyan_dye"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:cyan_dye_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
+    },
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_cyan_dye"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:cyan_dye_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "cyan_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "cyan_dye"
+        }
+    ]
+}

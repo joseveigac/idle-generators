@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:bone_meal"
+        },
+        "D": {
+            "item": "minecraft:lime_dye"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "T": {
+            "item": "minecraft:sea_pickle"
+        }
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:lime_dye_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "lime_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "lime_dye"
+        }
+    ]
+}

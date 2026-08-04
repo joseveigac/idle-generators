@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/white_dye_generator_frame"
+    }
+  }
+}

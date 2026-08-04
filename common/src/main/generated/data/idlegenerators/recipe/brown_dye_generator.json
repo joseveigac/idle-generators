@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:bone_meal"
+        },
+        "D": {
+            "item": "minecraft:brown_dye"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "T": {
+            "item": "minecraft:cocoa_beans"
+        }
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:brown_dye_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "brown_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "brown_dye"
+        }
+    ]
+}
