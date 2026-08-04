@@ -1,17 +1,29 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:red_sand",
-    "G": "minecraft:glass",
-    "S": "minecraft:sand",
-    "T": "minecraft:red_dye"
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "id": "idlegenerators:red_sand_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:red_sand",
+        "G": "minecraft:glass",
+        "S": "minecraft:sand",
+        "T": "minecraft:red_dye"
+    },
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:red_sand_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "red_sand"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "red_sand"
+        }
+    ]
 }

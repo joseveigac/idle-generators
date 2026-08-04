@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_redstone": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:redstone"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_redstone": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:redstone"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:redstone_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:redstone_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_redstone"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_redstone"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:redstone_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "redstone"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "redstone"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:redstone_generator"
-    ]
-  }
 }

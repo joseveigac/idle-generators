@@ -1,17 +1,29 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:calcite",
-    "G": "minecraft:glass",
-    "S": "minecraft:cobblestone",
-    "T": "minecraft:bone_meal"
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "id": "idlegenerators:calcite_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:calcite",
+        "G": "minecraft:glass",
+        "S": "minecraft:cobblestone",
+        "T": "minecraft:bone_meal"
+    },
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:calcite_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "calcite"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "calcite"
+        }
+    ]
 }

@@ -1,17 +1,29 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:deepslate",
-    "G": "minecraft:glass",
-    "S": "minecraft:cobblestone",
-    "T": "minecraft:stone_pickaxe"
-  },
-  "pattern": [
-    "GTG",
-    "SBS",
-    "GTG"
-  ],
-  "result": {
-    "id": "idlegenerators:deepslate_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:deepslate",
+        "G": "minecraft:glass",
+        "S": "minecraft:cobblestone",
+        "T": "minecraft:stone_pickaxe"
+    },
+    "pattern": [
+        "GTG",
+        "SBS",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:deepslate_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "deepslate"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "deepslate"
+        }
+    ]
 }

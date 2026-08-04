@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_emerald": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:emerald"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_emerald": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:emerald"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:emerald_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:emerald_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_emerald"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_emerald"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:emerald_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "emerald"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "emerald"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:emerald_generator"
-    ]
-  }
 }

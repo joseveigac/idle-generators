@@ -1,9 +1,11 @@
 package com.ghozix.idlegenerators;
 
 import com.ghozix.idlegenerators.config.IGConfig;
+import com.ghozix.idlegenerators.config.IGConfigReload;
 import com.ghozix.idlegenerators.generator.GeneratorType;
 import com.ghozix.idlegenerators.generator.GeneratorTypes;
 import com.ghozix.idlegenerators.hud.GeneratorHud;
+import com.ghozix.idlegenerators.network.IGNetwork;
 import com.ghozix.idlegenerators.registry.ModBlocks;
 import com.ghozix.idlegenerators.registry.ModItems;
 import com.ghozix.idlegenerators.registry.ModBlockEntities;
@@ -24,5 +26,7 @@ public final class IdleGenerators {
         ModItems.register();
         ModBlockEntities.register();
         GeneratorHud.register();
+        IGNetwork.register();
+        IGConfigReload.register();
     }
 }

@@ -1,6 +1,8 @@
 package com.ghozix.idlegenerators.client;
 
+import com.ghozix.idlegenerators.config.ClientToggles;
 import com.ghozix.idlegenerators.registry.ModBlockEntities;
+import dev.architectury.event.events.client.ClientPlayerEvent;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -20,5 +22,9 @@ public final class IGClient {
 
         // v1.3.0: la GUI del mapa de toggles (desplegables por categoría) es un provider custom.
         IGConfigGui.register();
+
+        // v1.3.0 R4: vaciar el conjunto sincronizado al salir del mundo; si no, el de un servidor
+        // contaminaría el siguiente (o el singleplayer siguiente).
+        ClientPlayerEvent.CLIENT_PLAYER_QUIT.register(player -> ClientToggles.clear());
     }
 }

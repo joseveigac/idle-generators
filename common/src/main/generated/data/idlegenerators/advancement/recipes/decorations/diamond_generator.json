@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_diamond": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:diamond"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_diamond": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:diamond_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:diamond_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_diamond"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_diamond"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:diamond_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "diamond"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "diamond"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:diamond_generator"
-    ]
-  }
 }

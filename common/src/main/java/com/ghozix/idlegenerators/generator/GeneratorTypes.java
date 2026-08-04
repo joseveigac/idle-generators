@@ -2,10 +2,11 @@ package com.ghozix.idlegenerators.generator;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class GeneratorTypes {
     private GeneratorTypes() {}
@@ -111,4 +112,13 @@ public final class GeneratorTypes {
         stone("red_sand", 5, 512, Items.RED_SAND, Items.DYE.red(), Items.SAND),
         stone("clay", 5, 1024, Items.CLAY_BALL, Items.CLAY, Items.WATER_BUCKET, Items.COBBLESTONE)
     );
+
+    // Declarado DESPUÉS de ALL a propósito: los campos estáticos se inicializan en orden de
+    // declaración, así que aquí arriba ALL todavía sería null.
+    private static final Map<String, GeneratorType> BY_KEY =
+        ALL.stream().collect(Collectors.toUnmodifiableMap(GeneratorType::key, t -> t));
+
+    /** Lookup por clave para las condiciones de carga de receta (v1.3.0). */
+    @Nullable
+    public static GeneratorType byKey(String key) { return BY_KEY.get(key); }
 }

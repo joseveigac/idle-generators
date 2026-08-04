@@ -1,16 +1,28 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "B": "minecraft:quartz_block",
-    "F": "minecraft:glowstone",
-    "G": "minecraft:glass"
-  },
-  "pattern": [
-    "GFG",
-    "FBF",
-    "GFG"
-  ],
-  "result": {
-    "id": "idlegenerators:quartz_generator"
-  }
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:quartz_block",
+        "F": "minecraft:glowstone",
+        "G": "minecraft:glass"
+    },
+    "pattern": [
+        "GFG",
+        "FBF",
+        "GFG"
+    ],
+    "result": {
+        "id": "idlegenerators:quartz_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "quartz"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "quartz"
+        }
+    ]
 }

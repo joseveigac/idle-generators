@@ -1,32 +1,44 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_gravel": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:gravel"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_gravel": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:gravel"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:gravel_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
     },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "idlegenerators:gravel_generator"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    }
-  },
-  "requirements": [
-    [
-      "has_the_recipe",
-      "has_gravel"
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_gravel"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:gravel_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "gravel"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "gravel"
+        }
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "idlegenerators:gravel_generator"
-    ]
-  }
 }
