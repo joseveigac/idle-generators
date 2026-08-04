@@ -5,6 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 
 /**
  * Reconstruye el contenido de nuestra pestaña creativa cuando cambia el conjunto de generadores
@@ -24,9 +25,16 @@ public final class CreativeTabRefresher {
     public static void run() {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.level == null) return;
-        ModCreativeTab.TAB.get().buildContents(new CreativeModeTab.ItemDisplayParameters(
+        CreativeModeTab.ItemDisplayParameters params = new CreativeModeTab.ItemDisplayParameters(
                 mc.player.connection.enabledFeatures(),
                 mc.options.operatorItemsTab().get(),
-                mc.level.registryAccess()));
+                mc.level.registryAccess());
+        ModCreativeTab.TAB.get().buildContents(params);
+        // La pestaña de BÚSQUEDA es otra pestaña, que agrega el contenido de las de tipo CATEGORY
+        // ya construidas: vanilla lo hace en dos pasadas dentro de buildAllTabContents (verificado
+        // en bytecode 26.2). Reconstruir solo la nuestra la dejaba con la lista vieja, así que el
+        // item seguía apareciendo en la búsqueda del creativo y en la lista de JEI/REI, que leen
+        // getSearchTabDisplayItems(). El orden importa: primero la nuestra, luego la de búsqueda.
+        CreativeModeTabs.searchTab().buildContents(params);
     }
 }
