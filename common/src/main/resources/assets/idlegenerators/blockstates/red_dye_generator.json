@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "idlegenerators:block/red_dye_generator_frame" }
+  }
+}

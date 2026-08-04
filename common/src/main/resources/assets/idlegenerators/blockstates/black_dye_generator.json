@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "idlegenerators:block/black_dye_generator_frame" }
+  }
+}
