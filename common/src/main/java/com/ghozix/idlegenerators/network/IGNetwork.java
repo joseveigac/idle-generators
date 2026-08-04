@@ -62,7 +62,7 @@ public final class IGNetwork {
         PlayerEvent.PLAYER_JOIN.register(IGNetwork::sendTo);
     }
 
-    public static Set<String> disabledKeys() {
+    private static Set<String> disabledKeys() {
         IGConfig cfg = IGConfig.get();
         return GeneratorTypes.ALL.stream()
                 .filter(t -> !cfg.isGeneratorEnabled(t.key(), t.category()))
@@ -70,7 +70,7 @@ public final class IGNetwork {
                 .collect(Collectors.toUnmodifiableSet());
     }
 
-    public static void sendTo(ServerPlayer player) {
+    private static void sendTo(ServerPlayer player) {
         // Cliente sin el mod o que rechaza el canal: no enviar (lanzaría al intentarlo).
         if (!NetworkManager.canPlayerReceive(player, S2CDisabledGenerators.TYPE)) return;
         NetworkManager.sendToPlayer(player, new S2CDisabledGenerators(disabledKeys()));
