@@ -4,5 +4,6 @@ package com.ghozix.idlegenerators.generator;
 public enum GeneratorCategory {
     ORES,
     WOODS,
-    STONES
+    STONES,
+    COLORS
 }

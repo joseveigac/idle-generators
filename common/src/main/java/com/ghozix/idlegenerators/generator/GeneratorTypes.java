@@ -23,6 +23,13 @@ public final class GeneratorTypes {
         return stone(key, intervalSeconds, cap, product, product, topCatalyst, sideCatalyst);
     }
 
+    private static GeneratorType dye(String key, Item source, Item dye) {
+        return new GeneratorType(key, GeneratorCategory.COLORS, 5, 1024, dye,
+                List.of("GTG", "BDB", "GTG"),
+                Map.of('G', Items.GLASS, 'T', source, 'B', Items.BONE_MEAL, 'D', dye),
+                dye);
+    }
+
     // Center sample is the BLOCK form of the output (differs from product for dripstone/clay);
     // like the woods, the recipe unlocks on the center block.
     private static GeneratorType stone(String key, int intervalSeconds, int cap, Item product,
@@ -110,7 +117,24 @@ public final class GeneratorTypes {
         stone("sand", 5, 512, Items.SAND, Items.WATER_BUCKET, Items.COBBLESTONE),
         // 26.x groups colored variants into ColorCollection (1.21.1 uses plain Items.RED_DYE).
         stone("red_sand", 5, 512, Items.RED_SAND, Items.DYE.red(), Items.SAND),
-        stone("clay", 5, 1024, Items.CLAY_BALL, Items.CLAY, Items.WATER_BUCKET, Items.COBBLESTONE)
+        stone("clay", 5, 1024, Items.CLAY_BALL, Items.CLAY, Items.WATER_BUCKET, Items.COBBLESTONE),
+        // ── Colors (16) — paridad Bedrock v1.3.0: GTG/BDB/GTG, 5 s, cap 1024 ──────────
+        dye("white_dye", Items.BONE, Items.DYE.white()),
+        dye("light_gray_dye", Items.OXEYE_DAISY, Items.DYE.lightGray()),
+        dye("gray_dye", Items.CHARCOAL, Items.DYE.gray()),
+        dye("black_dye", Items.INK_SAC, Items.DYE.black()),
+        dye("brown_dye", Items.COCOA_BEANS, Items.DYE.brown()),
+        dye("red_dye", Items.POPPY, Items.DYE.red()),
+        dye("orange_dye", Items.ORANGE_TULIP, Items.DYE.orange()),
+        dye("yellow_dye", Items.DANDELION, Items.DYE.yellow()),
+        dye("lime_dye", Items.SEA_PICKLE, Items.DYE.lime()),
+        dye("green_dye", Items.CACTUS, Items.DYE.green()),
+        dye("cyan_dye", Items.PITCHER_PLANT, Items.DYE.cyan()),
+        dye("light_blue_dye", Items.BLUE_ORCHID, Items.DYE.lightBlue()),
+        dye("blue_dye", Items.CORNFLOWER, Items.DYE.blue()),
+        dye("purple_dye", Items.ALLIUM, Items.DYE.purple()),
+        dye("magenta_dye", Items.LILAC, Items.DYE.magenta()),
+        dye("pink_dye", Items.PEONY, Items.DYE.pink())
     );
 
     // Declarado DESPUÉS de ALL a propósito: los campos estáticos se inicializan en orden de

@@ -2,8 +2,10 @@ package com.ghozix.idlegenerators.generator;
 
 import net.minecraft.SharedConstants;
 import net.minecraft.server.Bootstrap;
+import net.minecraft.world.item.Items;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /** A diferencia del resto de tests, este toca GeneratorTypes.ALL, que referencia Items → hay
@@ -29,5 +31,24 @@ class GeneratorTypesTest {
     @Test void everyGeneratorKeyIsUnique() {
         assertEquals(GeneratorTypes.ALL.size(),
                 GeneratorTypes.ALL.stream().map(GeneratorType::key).distinct().count());
+    }
+
+    /** Set Colors (v1.3.0): paridad Bedrock — 16 tintes, receta GTG/BDB/GTG, 5 s, cap 1024. */
+    @Test void colorsSetMatchesBedrockParity() {
+        List<GeneratorType> colors = GeneratorTypes.ALL.stream()
+                .filter(t -> t.category() == GeneratorCategory.COLORS).toList();
+        assertEquals(List.of("white_dye", "light_gray_dye", "gray_dye", "black_dye",
+                "brown_dye", "red_dye", "orange_dye", "yellow_dye", "lime_dye", "green_dye",
+                "cyan_dye", "light_blue_dye", "blue_dye", "purple_dye", "magenta_dye", "pink_dye"),
+                colors.stream().map(GeneratorType::key).toList());
+        for (GeneratorType t : colors) {
+            assertEquals(5, t.intervalSeconds(), t.key());
+            assertEquals(1024, t.cap(), t.key());
+            assertEquals(List.of("GTG", "BDB", "GTG"), t.pattern(), t.key());
+            assertSame(Items.GLASS, t.recipeKeys().get('G'), t.key());
+            assertSame(Items.BONE_MEAL, t.recipeKeys().get('B'), t.key());
+            assertSame(t.product(), t.recipeKeys().get('D'), t.key()); // regla de la muestra
+            assertSame(t.product(), t.unlockItem(), t.key());          // desbloqueo por la muestra
+        }
     }
 }
