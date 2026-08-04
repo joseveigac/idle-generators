@@ -1,6 +1,6 @@
-{
-  "parent": "minecraft:item/generated",
+﻿{
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/jungle_log_generator"
+    "gen": "idlegenerators:block/jungle_log_generator"
   }
 }

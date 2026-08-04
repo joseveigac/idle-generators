@@ -1,6 +1,6 @@
-{
-  "parent": "minecraft:item/generated",
+﻿{
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/stone_generator"
+    "gen": "idlegenerators:block/stone_generator"
   }
 }

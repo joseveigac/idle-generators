@@ -1,6 +1,6 @@
-{
-  "parent": "minecraft:item/generated",
+﻿{
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/spruce_log_generator"
+    "gen": "idlegenerators:block/spruce_log_generator"
   }
 }

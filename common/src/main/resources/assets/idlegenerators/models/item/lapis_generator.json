@@ -1,6 +1,6 @@
-{
-  "parent": "minecraft:item/generated",
+﻿{
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/lapis_generator"
+    "gen": "idlegenerators:block/lapis_generator"
   }
 }

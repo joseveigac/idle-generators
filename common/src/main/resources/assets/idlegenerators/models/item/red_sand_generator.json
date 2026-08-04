@@ -1,6 +1,6 @@
-{
-  "parent": "minecraft:item/generated",
+﻿{
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/red_sand_generator"
+    "gen": "idlegenerators:block/red_sand_generator"
   }
 }
