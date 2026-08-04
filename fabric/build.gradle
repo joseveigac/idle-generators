@@ -115,6 +115,10 @@ dependencies {
     modCompileOnly "maven.modrinth:jade:$rootProject.jade_fabric_version"
     modLocalRuntime "maven.modrinth:jade:$rootProject.jade_fabric_version"
 
+    // EMI — dev runtime only, para verificar en cliente que un generador desactivado desaparece
+    // de su lista de items (v1.3.0 R4). Solo en esta rama: EMI no existe para 26.x (2026-08-04).
+    modLocalRuntime 'maven.modrinth:emi:1.1.24+1.21.1+fabric'
+
     // Iris + Sodium — dev-only, for the Photo Client run (screenshots with shaders). NEVER shipped.
     // Iris 1.8.8 requires Sodium 0.6.x (verified from its fabric.mod.json, 2026-07).
     modLocalRuntime 'maven.modrinth:sodium:mc1.21.1-0.6.13-fabric'
