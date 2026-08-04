@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:bone_meal",
+        "D": "minecraft:green_dye",
+        "G": "minecraft:glass",
+        "T": "minecraft:cactus"
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:green_dye_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "green_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "green_dye"
+        }
+    ]
+}

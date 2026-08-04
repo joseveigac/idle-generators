@@ -1,0 +1,44 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:yellow_dye_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        },
+        "has_yellow_dye": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:yellow_dye"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_yellow_dye"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:yellow_dye_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "yellow_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "yellow_dye"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_red_dye": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:red_dye"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:red_dye_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
+    },
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_red_dye"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:red_dye_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "red_dye"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "red_dye"
+        }
+    ]
+}
