@@ -49,17 +49,27 @@ public final class IGNetwork {
 
     /** Se llama desde IdleGenerators.init(), en ambos lados. */
     public static void register() {
-        // Esta clase se carga también en un dedicado, así que el handler NO puede tocar clases de
-        // cliente directamente: CreativeTabRefresher va detrás de EnvExecutor y solo se carga
-        // cuando el lambda corre, cosa que en un dedicado no pasa nunca (no recibe S2C).
+        // Divergencia 1.21.1: en Architectury 13.x el adaptor de servidor de Fabric NO implementa
+        // registerS2C — registrar un receiver S2C en un entorno servidor lanza AbstractMethodError
+        // (visto en runDatagen, 2026-08-04; en 26.x/Arch 21 la misma llamada vale en ambos lados).
+        // Receiver solo en el cliente físico; el dedicado registra solo el TIPO para poder enviar.
+        EnvExecutor.runInEnv(Env.CLIENT, () -> IGNetwork::registerClientReceiver);
+        EnvExecutor.runInEnv(Env.SERVER, () -> () -> NetworkManager.registerS2CPayloadType(
+                S2CDisabledGenerators.TYPE, S2CDisabledGenerators.CODEC));
+
+        PlayerEvent.PLAYER_JOIN.register(IGNetwork::sendTo);
+    }
+
+    private static void registerClientReceiver() {
+        // El handler NO puede tocar clases de cliente directamente (esta clase también existe en el
+        // dedicado): CreativeTabRefresher va detrás de EnvExecutor y solo se carga al correr el
+        // lambda, cosa que aquí ya es siempre en cliente.
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 S2CDisabledGenerators.TYPE, S2CDisabledGenerators.CODEC,
                 (payload, context) -> context.queue(() -> {
                     ClientToggles.set(payload.keys());
                     EnvExecutor.runInEnv(Env.CLIENT, () -> CreativeTabRefresher::run);
                 }));
-
-        PlayerEvent.PLAYER_JOIN.register(IGNetwork::sendTo);
     }
 
     private static Set<String> disabledKeys() {
