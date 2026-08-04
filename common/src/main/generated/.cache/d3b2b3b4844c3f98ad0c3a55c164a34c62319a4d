@@ -1,4 +1,4 @@
-// 1.21.1	2026-07-17T19:29:23.5165719	Idle Generators/Block Loot Tables
+// 1.21.1	2026-08-04T18:02:35.6554817	Idle Generators/Block Loot Tables
 bd69520d550d7c8e30b69ee92e6dc20a736acea4 data\idlegenerators\loot_table\blocks\oak_log_generator.json
 a856602e4904eea942475fa62aba7ba499a40cb7 data\idlegenerators\loot_table\blocks\copper_generator.json
 9ef9cee093b132a04c1ffbc1379f9a2d007833a6 data\idlegenerators\loot_table\blocks\jungle_log_generator.json
@@ -17,8 +17,8 @@ ff88925ca2c90d700a26004e3d88a948785cd3a0 data\idlegenerators\loot_table\blocks\a
 17b5edb0c2ae9a02f69c03c1c60432f66c48a558 data\idlegenerators\loot_table\blocks\lapis_generator.json
 f9d582b0e7eefc362fe4698d50324e5a29b90391 data\idlegenerators\loot_table\blocks\sand_generator.json
 fdf1d00e4b8afdcd1f19bb3d72c061f55d9c50ab data\idlegenerators\loot_table\blocks\coal_generator.json
-9bdf047f5b9da59d0fb22e4847ff0f8cc4e7a1a2 data\idlegenerators\loot_table\blocks\clay_generator.json
 0ef67f8f822b505186dbdeebdd21e81640c65be2 data\idlegenerators\loot_table\blocks\diamond_generator.json
+9bdf047f5b9da59d0fb22e4847ff0f8cc4e7a1a2 data\idlegenerators\loot_table\blocks\clay_generator.json
 f468265511f7f99de8746cfcf145715a2a99074c data\idlegenerators\loot_table\blocks\mangrove_log_generator.json
 53ddc1982ad83ffaede0392bad61dcb763bbb5e9 data\idlegenerators\loot_table\blocks\dripstone_generator.json
 b66b32ffc6f8d64fe0e6bb60121f4789cf630089 data\idlegenerators\loot_table\blocks\gold_generator.json

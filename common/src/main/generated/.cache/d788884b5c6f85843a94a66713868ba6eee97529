@@ -1,4 +1,4 @@
-// 1.21.1	2026-07-17T19:29:23.4978711	Idle Generators/Model Definitions
+// 1.21.1	2026-08-04T18:02:35.650484	Idle Generators/Model Definitions
 2ed8ac4ed562bfab574d7534c2612cefcf9bfe43 assets\idlegenerators\blockstates\stone_generator.json
 4d33a6afd8b2ec72858cafed063266f0db2798c5 assets\idlegenerators\models\block\quartz_generator_frame.json
 33c3386908f81173dcb2355b554fdeb0c53aebed assets\idlegenerators\blockstates\mangrove_log_generator.json
@@ -20,9 +20,9 @@ b83f986a43324a54e1fb82923458b2bf3b26dff4 assets\idlegenerators\models\block\emer
 981bf43bff9f615708cc42c05b7327a0abae3332 assets\idlegenerators\models\block\deepslate_generator.json
 8ee2020c1f707be8275875495aeae8c9e23af5a1 assets\idlegenerators\blockstates\spruce_log_generator.json
 ab7c27b7f9f48649c7b54fe1d939304d22132420 assets\idlegenerators\models\block\acacia_log_generator_frame.json
-999a801c3f3249ac5347154438abe14b3f27b0d6 assets\idlegenerators\models\block\stone_generator_frame.json
-b1b1972f5e84db59431531f70e33cc5abed70b91 assets\idlegenerators\models\block\copper_generator_frame.json
 652f47c794731d7bce094d62d440f5ebb5d19f6c assets\idlegenerators\blockstates\oak_log_generator.json
+b1b1972f5e84db59431531f70e33cc5abed70b91 assets\idlegenerators\models\block\copper_generator_frame.json
+999a801c3f3249ac5347154438abe14b3f27b0d6 assets\idlegenerators\models\block\stone_generator_frame.json
 8a5aca7e1e1a31d1372adde2af38386878b2148b assets\idlegenerators\models\block\redstone_generator.json
 cd9e8e837decf02755d3d3e082a3a8476478a41b assets\idlegenerators\models\item\jungle_log_generator.json
 a62a6066bbc1106408caca3b624591f64174f89c assets\idlegenerators\models\block\iron_generator.json
