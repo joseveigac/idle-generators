@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/calcite_generator"
+    "gen": "idlegenerators:block/calcite_generator"
   }
 }

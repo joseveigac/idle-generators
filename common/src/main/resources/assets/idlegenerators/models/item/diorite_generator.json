@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/diorite_generator"
+    "gen": "idlegenerators:block/diorite_generator"
   }
 }

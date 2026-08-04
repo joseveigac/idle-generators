@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "idlegenerators:block/generator_base",
   "textures": {
-    "layer0": "idlegenerators:item/pale_oak_log_generator"
+    "gen": "idlegenerators:block/pale_oak_log_generator"
   }
 }
