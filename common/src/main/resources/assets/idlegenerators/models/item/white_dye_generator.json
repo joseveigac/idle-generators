@@ -1,0 +1,6 @@
+{
+  "parent": "idlegenerators:block/generator_base",
+  "textures": {
+    "gen": "idlegenerators:block/white_dye_generator"
+  }
+}

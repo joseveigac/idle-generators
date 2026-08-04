@@ -50,6 +50,15 @@ class IGConfigTest {
         assertFalse(c.isGeneratorEnabled("diamond", GeneratorCategory.ORES));
     }
 
+    @Test void colorsCategoryFollowsItsToggleAndOverrides() {
+        IGConfig c = new IGConfig();
+        assertTrue(c.isGeneratorEnabled("white_dye", GeneratorCategory.COLORS));
+        c.colorsEnabled = false;
+        assertFalse(c.isGeneratorEnabled("white_dye", GeneratorCategory.COLORS));
+        c.generators.put("white_dye", GeneratorToggle.ON);
+        assertTrue(c.isGeneratorEnabled("white_dye", GeneratorCategory.COLORS));
+    }
+
     @Test void ensureAllKeysPopulatesMissingAsDefault() {
         IGConfig c = new IGConfig();
         c.generators.put("iron", GeneratorToggle.OFF);

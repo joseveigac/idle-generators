@@ -1,0 +1,6 @@
+{
+  "parent": "idlegenerators:block/generator_frame",
+  "textures": {
+    "gen": "idlegenerators:block/brown_dye_generator"
+  }
+}
