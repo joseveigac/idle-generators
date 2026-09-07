@@ -51,4 +51,39 @@ class GeneratorTypesTest {
             assertSame(t.product(), t.unlockItem(), t.key());          // desbloqueo por la muestra
         }
     }
+
+    /** Set Nature (v1.4.0): paridad Bedrock — 8 generadores, receta GTG/BDB/GTG con enredaderas
+     *  como par fijo, fuente temática T e intervalo/cap por generador (tiers del diseño). */
+    @Test void natureSetMatchesBedrockParity() {
+        List<GeneratorType> nature = GeneratorTypes.ALL.stream()
+                .filter(t -> t.category() == GeneratorCategory.NATURE).toList();
+        assertEquals(List.of("amethyst", "honeycomb", "glow_lichen", "moss", "spore_blossom",
+                "big_dripleaf", "flowering_azalea"),
+                nature.stream().map(GeneratorType::key).toList());
+        for (GeneratorType t : nature) {
+            assertEquals(List.of("GTG", "BDB", "GTG"), t.pattern(), t.key());
+            assertSame(Items.GLASS, t.recipeKeys().get('G'), t.key());
+            assertSame(Items.VINE, t.recipeKeys().get('B'), t.key());     // par fijo del set
+            assertSame(t.product(), t.recipeKeys().get('D'), t.key()); // regla de la muestra
+            assertSame(t.product(), t.unlockItem(), t.key());          // desbloqueo por la muestra
+        }
+        assertNature("amethyst", Items.AMETHYST_SHARD, Items.CALCITE, 20, 512);
+        assertNature("honeycomb", Items.HONEYCOMB, Items.HONEY_BOTTLE, 15, 512);
+        assertNature("glow_lichen", Items.GLOW_LICHEN, Items.BONE_MEAL, 5, 512);
+        assertNature("moss", Items.MOSS_BLOCK, Items.MOSS_CARPET, 5, 512);
+        assertNature("spore_blossom", Items.SPORE_BLOSSOM, Items.MOSS_BLOCK, 30, 256);
+        assertNature("big_dripleaf", Items.BIG_DRIPLEAF, Items.SMALL_DRIPLEAF, 10, 256);
+        assertNature("flowering_azalea", Items.FLOWERING_AZALEA, Items.AZALEA, 10, 256);
+        // resin: 26.2 branch only (MC 1.21.4+ item).
+    }
+
+    private static void assertNature(String key, net.minecraft.world.item.Item product,
+                                     net.minecraft.world.item.Item source, int seconds, int cap) {
+        GeneratorType t = GeneratorTypes.byKey(key);
+        assertNotNull(t, key);
+        assertSame(product, t.product(), key);
+        assertSame(source, t.recipeKeys().get('T'), key);
+        assertEquals(seconds, t.intervalSeconds(), key);
+        assertEquals(cap, t.cap(), key);
+    }
 }
