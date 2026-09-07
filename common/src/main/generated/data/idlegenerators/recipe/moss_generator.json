@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:vine",
+        "D": "minecraft:moss_block",
+        "G": "minecraft:glass",
+        "T": "minecraft:moss_carpet"
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:moss_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "moss"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "moss"
+        }
+    ]
+}

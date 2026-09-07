@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:vine",
+        "D": "minecraft:big_dripleaf",
+        "G": "minecraft:glass",
+        "T": "minecraft:small_dripleaf"
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:big_dripleaf_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "big_dripleaf"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "big_dripleaf"
+        }
+    ]
+}

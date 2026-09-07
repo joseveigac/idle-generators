@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/honeycomb_generator_frame" }
+  }
+}

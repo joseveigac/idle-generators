@@ -5,5 +5,6 @@ public enum GeneratorCategory {
     ORES,
     WOODS,
     STONES,
-    COLORS
+    COLORS,
+    NATURE
 }

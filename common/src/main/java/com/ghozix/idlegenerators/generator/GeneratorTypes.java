@@ -30,6 +30,16 @@ public final class GeneratorTypes {
                 dye);
     }
 
+    // Nature (v1.4.0): Colors layout with vines as the fixed pair; T is the thematic source
+    // and interval/cap follow the set's three tiers (bulk 5 s, medium 10-15 s, slow 20-30 s).
+    private static GeneratorType nature(String key, Item product, Item source,
+                                        int intervalSeconds, int cap) {
+        return new GeneratorType(key, GeneratorCategory.NATURE, intervalSeconds, cap, product,
+                List.of("GTG", "BDB", "GTG"),
+                Map.of('G', Items.GLASS, 'T', source, 'B', Items.VINE, 'D', product),
+                product);
+    }
+
     // Center sample is the BLOCK form of the output (differs from product for dripstone/clay);
     // like the woods, the recipe unlocks on the center block.
     private static GeneratorType stone(String key, int intervalSeconds, int cap, Item product,
@@ -134,7 +144,17 @@ public final class GeneratorTypes {
         dye("blue_dye", Items.CORNFLOWER, Items.DYE.blue()),
         dye("purple_dye", Items.ALLIUM, Items.DYE.purple()),
         dye("magenta_dye", Items.LILAC, Items.DYE.magenta()),
-        dye("pink_dye", Items.PEONY, Items.DYE.pink())
+        dye("pink_dye", Items.PEONY, Items.DYE.pink()),
+        // ── Nature (8) — paridad Bedrock v1.4.0: GTG/BDB/GTG con enredaderas, tiers ─────
+        nature("amethyst", Items.AMETHYST_SHARD, Items.CALCITE, 20, 512),
+        nature("honeycomb", Items.HONEYCOMB, Items.HONEY_BOTTLE, 15, 512),
+        nature("glow_lichen", Items.GLOW_LICHEN, Items.BONE_MEAL, 5, 512),
+        nature("moss", Items.MOSS_BLOCK, Items.MOSS_CARPET, 5, 512),
+        nature("spore_blossom", Items.SPORE_BLOSSOM, Items.MOSS_BLOCK, 30, 256),
+        nature("big_dripleaf", Items.BIG_DRIPLEAF, Items.SMALL_DRIPLEAF, 10, 256),
+        nature("flowering_azalea", Items.FLOWERING_AZALEA, Items.AZALEA, 10, 256),
+        // Resin only exists since MC 1.21.4: like pale_oak_log, only on the 26.2 branch.
+        nature("resin", Items.RESIN_CLUMP, Items.PALE_OAK_LOG, 20, 512)
     );
 
     // Declarado DESPUÉS de ALL a propósito: los campos estáticos se inicializan en orden de
