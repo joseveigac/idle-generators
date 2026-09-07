@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 — Nature
+
+Nature update: 7 new generators of living Overworld nature (54 total; the Resin generator needs Minecraft 1.21.4+ and ships only in the 26.2 build). Same content and version number as the Bedrock edition's v1.4.0.
+
+- **New generators:** Amethyst (amethyst shards), Honeycomb, Glow Lichen, Moss (moss blocks), Spore Blossom, Big Dripleaf, Flowering Azalea.
+- Recipes follow the Colors layout: glass corners, two vines on the sides (the set's signature), a thematic ingredient top and bottom (calcite, honey bottle, bone meal, moss carpet, moss block, small dripleaf, azalea) and the produced item itself as the center sample.
+- Three speed tiers: moss and glow lichen every 5 s (cap 512); big dripleaf and flowering azalea every 10 s and honeycomb every 15 s; amethyst every 20 s (cap 512) and spore blossom, the rarest, every 30 s (cap 256).
+- New category toggle **Nature generators enabled** plus the usual per-generator override; nature generators appear in their own dropdown of the config screen.
+- Fully localized: English + Spanish (es_ES, names verified against vanilla).
+
 ## 1.3.0 — Automation & Control
 
 Generators can now be piped into hoppers, and server owners can turn any generator off — or take it out of the game entirely.

@@ -2,18 +2,18 @@
 
 **Place a generator and let it work — even while the world is closed.**
 
-Idle Generators adds 31 craftable block-generators that produce resources passively over real time. Close your world, go offline, come back later — the generators track how much time has passed and fill up their internal buffer. When you return, an action-bar HUD shows the current buffer, and you can collect or break the block to retrieve everything that accumulated.
+Idle Generators adds 54 craftable block-generators that produce resources passively over real time. Close your world, go offline, come back later — the generators track how much time has passed and fill up their internal buffer. When you return, an action-bar HUD shows the current buffer, and you can collect or break the block to retrieve everything that accumulated.
 
 ## Features
 
-- **31 generators** — 11 mineral types, 8 wood types and 12 stone & construction types, each with its own production interval and buffer cap (see the table below).
+- **54 generators** — 11 mineral types, 8 wood types, 12 stone & construction types, 16 dye colors and 7 nature types, each with its own production interval and buffer cap (see the table below).
 - **Offline production** — generators use real-world timestamps so items accumulate while the game is closed.
 - **Action-bar HUD** — live buffer readout (items stored / cap) updates every tick when you look at a generator.
 - **Collect or break** — right-click to collect without breaking; break the block to get the buffer plus the block itself.
 - **Animated core renderer** — the generator block displays a rotating animated core whose appearance reflects the output type.
 - **Optional Jade support** — look-at tooltip shows buffer status when [Jade](https://modrinth.com/mod/jade) is installed.
 - **Hopper and pipe output** — the buffer is a real inventory: hoppers, droppers and mod pipes can pull from any side. Insertion is blocked; a comparator reads buffer fullness 0–15.
-- **Turn generators off — or take them out of the game** — toggle a whole category (ores / woods / stones) or override any single generator to forced ON / forced OFF. A disabled generator loses its recipe and disappears from the recipe book, the creative tab and the JEI/EMI/REI item list. Generators already placed in the world are never destroyed: they just stop producing and can still be emptied.
+- **Turn generators off — or take them out of the game** — toggle a whole category (ores / woods / stones / colors / nature) or override any single generator to forced ON / forced OFF. A disabled generator loses its recipe and disappears from the recipe book, the creative tab and the JEI/EMI/REI item list. Generators already placed in the world are never destroyed: they just stop producing and can still be emptied.
 - **Cloth Config integration** — in-game config screen for the HUD, a global production speed multiplier, drop-on-break, and the per-generator toggles. On a server, edit `config/idlegenerators.json` and run `/reload` to apply changes without a restart.
 
 ## Generators
@@ -51,6 +51,29 @@ Idle Generators adds 31 craftable block-generators that produce resources passiv
 | Sand | 5 s | 512 |
 | Red Sand | 5 s | 512 |
 | Clay (clay balls) | 5 s | 1024 |
+| White Dye | 5 s | 1024 |
+| Light Gray Dye | 5 s | 1024 |
+| Gray Dye | 5 s | 1024 |
+| Black Dye | 5 s | 1024 |
+| Brown Dye | 5 s | 1024 |
+| Red Dye | 5 s | 1024 |
+| Orange Dye | 5 s | 1024 |
+| Yellow Dye | 5 s | 1024 |
+| Lime Dye | 5 s | 1024 |
+| Green Dye | 5 s | 1024 |
+| Cyan Dye | 5 s | 1024 |
+| Light Blue Dye | 5 s | 1024 |
+| Blue Dye | 5 s | 1024 |
+| Purple Dye | 5 s | 1024 |
+| Magenta Dye | 5 s | 1024 |
+| Pink Dye | 5 s | 1024 |
+| Amethyst (amethyst shards) | 20 s | 512 |
+| Honeycomb | 15 s | 512 |
+| Glow Lichen | 5 s | 512 |
+| Moss (moss blocks) | 5 s | 512 |
+| Spore Blossom | 30 s | 256 |
+| Big Dripleaf | 10 s | 256 |
+| Flowering Azalea | 10 s | 256 |
 
 ## Requirements
 
