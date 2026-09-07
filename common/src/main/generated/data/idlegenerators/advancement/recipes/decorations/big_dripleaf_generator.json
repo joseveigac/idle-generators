@@ -1,0 +1,44 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_big_dripleaf": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:big_dripleaf"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "idlegenerators:big_dripleaf_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
+    },
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_big_dripleaf"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:big_dripleaf_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "big_dripleaf"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "big_dripleaf"
+        }
+    ]
+}

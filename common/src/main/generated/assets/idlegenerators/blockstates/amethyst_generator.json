@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/amethyst_generator_frame"
+    }
+  }
+}

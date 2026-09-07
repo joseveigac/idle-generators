@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/big_dripleaf_generator_frame"
+    }
+  }
+}
