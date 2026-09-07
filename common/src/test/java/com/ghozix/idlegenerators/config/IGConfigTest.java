@@ -59,6 +59,15 @@ class IGConfigTest {
         assertTrue(c.isGeneratorEnabled("white_dye", GeneratorCategory.COLORS));
     }
 
+    @Test void natureCategoryFollowsItsToggleAndOverrides() {
+        IGConfig c = new IGConfig();
+        assertTrue(c.isGeneratorEnabled("moss", GeneratorCategory.NATURE));
+        c.natureEnabled = false;
+        assertFalse(c.isGeneratorEnabled("moss", GeneratorCategory.NATURE));
+        c.generators.put("moss", GeneratorToggle.ON);
+        assertTrue(c.isGeneratorEnabled("moss", GeneratorCategory.NATURE));
+    }
+
     @Test void ensureAllKeysPopulatesMissingAsDefault() {
         IGConfig c = new IGConfig();
         c.generators.put("iron", GeneratorToggle.OFF);
