@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/magma_generator_frame"
+    }
+  }
+}

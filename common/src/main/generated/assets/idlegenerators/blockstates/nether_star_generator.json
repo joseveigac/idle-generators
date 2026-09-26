@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/nether_star_generator_frame"
+    }
+  }
+}

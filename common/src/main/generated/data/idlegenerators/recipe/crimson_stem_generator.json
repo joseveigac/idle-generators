@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "B": {
+            "item": "minecraft:bone_meal"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "L": {
+            "item": "minecraft:crimson_stem"
+        },
+        "S": {
+            "item": "minecraft:crimson_fungus"
+        }
+    },
+    "pattern": [
+        "GBG",
+        "SLS",
+        "GSG"
+    ],
+    "result": {
+        "count": 1,
+        "id": "idlegenerators:crimson_stem_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "crimson_stem"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "crimson_stem"
+        }
+    ]
+}

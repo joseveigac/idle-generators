@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "idlegenerators:block/warped_stem_generator_frame"
+    }
+  }
+}
