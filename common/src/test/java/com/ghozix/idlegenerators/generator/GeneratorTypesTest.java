@@ -77,6 +77,61 @@ class GeneratorTypesTest {
         // resin: 26.2 branch only (MC 1.21.4+ item).
     }
 
+    /** v1.5.0: the two Nether stems join Woods with the usual log recipe, their fungus as the
+     *  sapling (poplar is 26.3-only, not on this branch). */
+    @Test void newWoodsFollowTheLogRecipe() {
+        List<String> woods = GeneratorTypes.ALL.stream()
+                .filter(t -> t.category() == GeneratorCategory.WOODS).map(GeneratorType::key).toList();
+        assertEquals(List.of("crimson_stem", "warped_stem"),
+                woods.subList(woods.size() - 2, woods.size()));
+        assertWood("crimson_stem", Items.CRIMSON_STEM, Items.CRIMSON_FUNGUS);
+        assertWood("warped_stem", Items.WARPED_STEM, Items.WARPED_FUNGUS);
+    }
+
+    /** Set Nether (v1.5.0): paridad Bedrock, 10 generadores, receta GTG/BDB/GTG con obsidiana
+     *  como par fijo, fuente temática T e intervalo/cap por generador (tiers del diseño). */
+    @Test void netherSetMatchesBedrockParity() {
+        List<GeneratorType> nether = GeneratorTypes.ALL.stream()
+                .filter(t -> t.category() == GeneratorCategory.NETHER).toList();
+        assertEquals(List.of("netherrack", "blackstone", "basalt", "soul_sand", "soul_soil",
+                "magma", "nether_wart", "glowstone", "wither_rose", "nether_star"),
+                nether.stream().map(GeneratorType::key).toList());
+        for (GeneratorType t : nether) {
+            assertEquals(List.of("GTG", "BDB", "GTG"), t.pattern(), t.key());
+            assertSame(Items.GLASS, t.recipeKeys().get('G'), t.key());
+            assertSame(Items.OBSIDIAN, t.recipeKeys().get('B'), t.key()); // par fijo del set
+            assertSame(t.product(), t.recipeKeys().get('D'), t.key());   // regla de la muestra
+            assertSame(t.product(), t.unlockItem(), t.key());            // desbloqueo por la muestra
+        }
+        assertNether("netherrack", Items.NETHERRACK, Items.FLINT_AND_STEEL, 5, 512);
+        assertNether("blackstone", Items.BLACKSTONE, Items.GOLD_INGOT, 5, 512);
+        assertNether("basalt", Items.BASALT, Items.BLUE_ICE, 5, 512);
+        assertNether("soul_sand", Items.SOUL_SAND, Items.NETHER_WART, 5, 512);
+        assertNether("soul_soil", Items.SOUL_SOIL, Items.BONE_BLOCK, 5, 512);
+        assertNether("magma", Items.MAGMA_BLOCK, Items.MAGMA_CREAM, 10, 512);
+        assertNether("nether_wart", Items.NETHER_WART, Items.SOUL_SAND, 10, 512);
+        assertNether("glowstone", Items.GLOWSTONE_DUST, Items.GLOWSTONE, 15, 1024);
+        assertNether("wither_rose", Items.WITHER_ROSE, Items.SOUL_SAND, 60, 256);
+        assertNether("nether_star", Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL, 3600, 8);
+    }
+
+    private static void assertWood(String key, net.minecraft.world.item.Item log,
+                                   net.minecraft.world.item.Item sapling) {
+        GeneratorType t = GeneratorTypes.byKey(key);
+        assertNotNull(t, key);
+        assertSame(log, t.product(), key);
+        assertSame(log, t.recipeKeys().get('L'), key);
+        assertSame(sapling, t.recipeKeys().get('S'), key);
+        assertEquals(5, t.intervalSeconds(), key);
+        assertEquals(64, t.cap(), key);
+    }
+
+    private static void assertNether(String key, net.minecraft.world.item.Item product,
+                                     net.minecraft.world.item.Item source, int seconds, int cap) {
+        assertNature(key, product, source, seconds, cap);
+        assertSame(GeneratorCategory.NETHER, GeneratorTypes.byKey(key).category(), key);
+    }
+
     private static void assertNature(String key, net.minecraft.world.item.Item product,
                                      net.minecraft.world.item.Item source, int seconds, int cap) {
         GeneratorType t = GeneratorTypes.byKey(key);

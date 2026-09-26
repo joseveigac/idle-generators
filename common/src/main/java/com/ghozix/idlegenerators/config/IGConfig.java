@@ -20,6 +20,7 @@ public class IGConfig implements ConfigData {
     public boolean stonesEnabled = true;
     public boolean colorsEnabled = true;
     public boolean natureEnabled = true;
+    public boolean netherEnabled = true;
     /** key → tri-estado. En la GUI se pinta con un provider custom (IGConfigGui):
      *  desplegable por categoría con un selector por generador, nada de escribir claves. */
     public Map<String, GeneratorToggle> generators = new LinkedHashMap<>();
@@ -35,6 +36,7 @@ public class IGConfig implements ConfigData {
                 case STONES -> stonesEnabled;
                 case COLORS -> colorsEnabled;
                 case NATURE -> natureEnabled;
+                case NETHER -> netherEnabled;
             };
         };
     }
