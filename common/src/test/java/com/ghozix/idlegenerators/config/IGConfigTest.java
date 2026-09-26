@@ -68,6 +68,15 @@ class IGConfigTest {
         assertTrue(c.isGeneratorEnabled("moss", GeneratorCategory.NATURE));
     }
 
+    @Test void netherCategoryFollowsItsToggleAndOverrides() {
+        IGConfig c = new IGConfig();
+        assertTrue(c.isGeneratorEnabled("netherrack", GeneratorCategory.NETHER));
+        c.netherEnabled = false;
+        assertFalse(c.isGeneratorEnabled("netherrack", GeneratorCategory.NETHER));
+        c.generators.put("netherrack", GeneratorToggle.ON);
+        assertTrue(c.isGeneratorEnabled("netherrack", GeneratorCategory.NETHER));
+    }
+
     @Test void ensureAllKeysPopulatesMissingAsDefault() {
         IGConfig c = new IGConfig();
         c.generators.put("iron", GeneratorToggle.OFF);
