@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "idlegenerators:poplar_log_generator"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

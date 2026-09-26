@@ -1,0 +1,44 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_poplar_log": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:poplar_log"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipes": "idlegenerators:poplar_log_generator"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
+    },
+    "requirements": [
+        [
+            "has_the_recipe",
+            "has_poplar_log"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "idlegenerators:poplar_log_generator"
+        ]
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "poplar_log"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "poplar_log"
+        }
+    ]
+}

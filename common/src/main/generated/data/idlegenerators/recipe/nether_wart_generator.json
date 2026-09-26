@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:obsidian",
+        "D": "minecraft:nether_wart",
+        "G": "minecraft:glass",
+        "T": "minecraft:soul_sand"
+    },
+    "pattern": [
+        "GTG",
+        "BDB",
+        "GTG"
+    ],
+    "result": {
+        "id": "idlegenerators:nether_wart_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "nether_wart"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "nether_wart"
+        }
+    ]
+}

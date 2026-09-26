@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": "minecraft:bone_meal",
+        "G": "minecraft:glass",
+        "L": "minecraft:poplar_log",
+        "S": "minecraft:poplar_sapling"
+    },
+    "pattern": [
+        "GBG",
+        "SLS",
+        "GSG"
+    ],
+    "result": {
+        "id": "idlegenerators:poplar_log_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "idlegenerators:generator_enabled",
+            "generator": "poplar_log"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "idlegenerators:generator_enabled",
+            "generator": "poplar_log"
+        }
+    ]
+}

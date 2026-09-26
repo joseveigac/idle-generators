@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "idlegenerators:wither_rose_generator"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}
