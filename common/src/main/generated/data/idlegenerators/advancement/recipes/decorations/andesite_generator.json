@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:andesite_generator"
+                "recipes": "idlegenerators:andesite_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

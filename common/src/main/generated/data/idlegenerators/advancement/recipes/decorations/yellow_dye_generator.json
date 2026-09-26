@@ -3,7 +3,7 @@
     "criteria": {
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:yellow_dye_generator"
+                "recipes": "idlegenerators:yellow_dye_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         },

@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:diorite_generator"
+                "recipes": "idlegenerators:diorite_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

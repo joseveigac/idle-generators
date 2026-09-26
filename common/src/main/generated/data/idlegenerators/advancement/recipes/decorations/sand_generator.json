@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:sand_generator"
+                "recipes": "idlegenerators:sand_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

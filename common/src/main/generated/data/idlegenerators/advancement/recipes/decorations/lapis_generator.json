@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:lapis_generator"
+                "recipes": "idlegenerators:lapis_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

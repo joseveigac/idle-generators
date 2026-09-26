@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:light_blue_dye_generator"
+                "recipes": "idlegenerators:light_blue_dye_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

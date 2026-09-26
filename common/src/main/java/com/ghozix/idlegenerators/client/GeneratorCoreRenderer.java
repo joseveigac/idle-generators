@@ -85,7 +85,7 @@ public class GeneratorCoreRenderer implements BlockEntityRenderer<GeneratorBlock
 
         poseStack.pushPose();
         poseStack.translate(0.5F, 7.0F / 16.0F + bob, 0.5F); // centre of core (y 4..10)
-        poseStack.mulPose(Axis.YP.rotationDegrees(angle));
+        poseStack.rotate(Axis.YP.rotationDegrees(angle));
         collector.submitModelPart(core, poseStack,
                 RenderTypes.entityCutout(TextureAtlas.LOCATION_BLOCKS),
                 state.lightCoords, OverlayTexture.NO_OVERLAY, state.sprite);

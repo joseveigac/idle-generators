@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:birch_log_generator"
+                "recipes": "idlegenerators:birch_log_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

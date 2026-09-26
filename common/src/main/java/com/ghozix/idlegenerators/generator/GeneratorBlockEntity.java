@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Prediction;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -119,7 +120,7 @@ public class GeneratorBlockEntity extends BlockEntity implements WorldlyContaine
             remaining -= out.getCount();
             took = true;
             if (!player.getInventory().add(out)) {
-                player.drop(out, false);
+                player.drop(out, false, Prediction.SERVER_ONLY);
             }
         }
         if (took) setChanged();

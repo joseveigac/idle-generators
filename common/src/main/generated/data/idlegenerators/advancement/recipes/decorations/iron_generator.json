@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:iron_generator"
+                "recipes": "idlegenerators:iron_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

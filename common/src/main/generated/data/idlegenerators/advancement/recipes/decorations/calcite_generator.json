@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:calcite_generator"
+                "recipes": "idlegenerators:calcite_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

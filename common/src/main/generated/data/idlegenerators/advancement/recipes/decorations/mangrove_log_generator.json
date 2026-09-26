@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:mangrove_log_generator"
+                "recipes": "idlegenerators:mangrove_log_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

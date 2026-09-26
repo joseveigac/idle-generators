@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:gold_generator"
+                "recipes": "idlegenerators:gold_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

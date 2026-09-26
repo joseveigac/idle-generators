@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:deepslate_generator"
+                "recipes": "idlegenerators:deepslate_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

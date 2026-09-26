@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:coal_generator"
+                "recipes": "idlegenerators:coal_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

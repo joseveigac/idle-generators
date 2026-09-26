@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:clay_generator"
+                "recipes": "idlegenerators:clay_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

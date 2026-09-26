@@ -16,28 +16,28 @@ logoFile = "assets/idlegenerators/icon.png"
 [[dependencies.idlegenerators]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.2.0.0-beta,)"
+versionRange = "[26.3.0.0-beta,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.idlegenerators]]
 modId = "minecraft"
 type = "required"
-versionRange = "[26.2,)"
+versionRange = "[26.3,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.idlegenerators]]
 modId = "architectury"
 type = "required"
-versionRange = "[21.0.2,)"
+versionRange = "[22.0.2,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.idlegenerators]]
 modId = "cloth_config"
 type = "required"
-versionRange = "[26.2.155,)"
+versionRange = "[26.3.159,)"
 ordering = "AFTER"
 side = "BOTH"
 

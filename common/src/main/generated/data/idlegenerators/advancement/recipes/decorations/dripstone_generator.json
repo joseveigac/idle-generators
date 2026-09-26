@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:dripstone_generator"
+                "recipes": "idlegenerators:dripstone_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

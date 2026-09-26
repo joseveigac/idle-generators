@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:big_dripleaf_generator"
+                "recipes": "idlegenerators:big_dripleaf_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

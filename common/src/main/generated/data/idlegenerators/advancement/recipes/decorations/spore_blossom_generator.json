@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:spore_blossom_generator"
+                "recipes": "idlegenerators:spore_blossom_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

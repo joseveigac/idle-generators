@@ -21,7 +21,7 @@ subprojects {
     apply plugin: 'maven-publish'
 
     base {
-        // Suffixed jar names, e.g. `idlegenerators-26.2-fabric`.
+        // Suffixed jar names, e.g. `idlegenerators-26.3-fabric`.
         archivesName = "$rootProject.archives_name-$project.name"
     }
 

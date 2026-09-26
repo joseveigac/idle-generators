@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:stone_generator"
+                "recipes": "idlegenerators:stone_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

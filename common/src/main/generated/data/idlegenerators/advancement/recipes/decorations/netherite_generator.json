@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:netherite_generator"
+                "recipes": "idlegenerators:netherite_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

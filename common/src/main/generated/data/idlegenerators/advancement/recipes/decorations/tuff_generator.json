@@ -3,7 +3,7 @@
     "criteria": {
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:tuff_generator"
+                "recipes": "idlegenerators:tuff_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         },

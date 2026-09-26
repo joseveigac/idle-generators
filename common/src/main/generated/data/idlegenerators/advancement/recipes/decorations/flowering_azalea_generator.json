@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:flowering_azalea_generator"
+                "recipes": "idlegenerators:flowering_azalea_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

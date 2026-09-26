@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:cobblestone_generator"
+                "recipes": "idlegenerators:cobblestone_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:copper_generator"
+                "recipes": "idlegenerators:copper_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

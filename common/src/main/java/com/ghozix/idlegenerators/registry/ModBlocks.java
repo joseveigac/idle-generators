@@ -30,7 +30,7 @@ public final class ModBlocks {
                         .setId(ResourceKey.create(Registries.BLOCK,
                                 Identifier.fromNamespaceAndPath(IdleGenerators.MOD_ID, type.blockId())))
                         .strength(1.0F, 1200.0F)          // 1s de minado; a prueba de explosiones
-                        .pushReaction(PushReaction.BLOCK) // no empujable por pistones
+                        .pushReaction(PushReaction.IMMOVEABLE) // no empujable por pistones
                         .sound(SoundType.STONE)
                         .noOcclusion())));                // el modelo tiene huecos de cristal (cutout)
         }

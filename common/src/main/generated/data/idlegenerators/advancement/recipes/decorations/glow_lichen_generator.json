@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:glow_lichen_generator"
+                "recipes": "idlegenerators:glow_lichen_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }

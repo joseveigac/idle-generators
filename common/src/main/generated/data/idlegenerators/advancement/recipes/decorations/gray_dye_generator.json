@@ -13,7 +13,7 @@
         },
         "has_the_recipe": {
             "conditions": {
-                "recipe": "idlegenerators:gray_dye_generator"
+                "recipes": "idlegenerators:gray_dye_generator"
             },
             "trigger": "minecraft:recipe_unlocked"
         }
