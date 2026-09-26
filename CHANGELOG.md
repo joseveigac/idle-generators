@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.5.0: Nether
+
+Nether update: 12 new generators (66 total). Same content and version number as the Bedrock edition's v1.5.0. The Poplar Log generator needs Minecraft 26.3 and ships only in the 26.3 build.
+
+- **New Nether generators:** Netherrack, Blackstone, Basalt, Soul Sand, Soul Soil, Magma (magma blocks), Nether Wart, Glowstone (glowstone dust), Wither Rose and Nether Star.
+- **New wood generators:** Crimson Stem and Warped Stem (community request). They use the log recipe with their fungus in place of the sapling.
+- Nether recipes: glass corners, two obsidian on the sides (the portal, the set's signature), a thematic ingredient top and bottom and the produced item itself as the center sample. The Nether Star generator asks for wither skeleton skulls, so you still have to beat a second Wither.
+- Speed tiers: the building blocks every 5 s (cap 512); magma and nether wart every 10 s; glowstone dust every 15 s (cap 1024); wither rose every 60 s (cap 256); Nether Star once per hour, capped at 8.
+- New category toggle **Nether generators enabled** plus the usual per-generator override, with its own dropdown in the config screen.
+- **Custom recipes:** a template data pack lets you change any generator recipe. Drop it in your world's `datapacks` folder, edit the JSON and run `/reload`. Keep the two condition blocks so the config toggles keep working.
+- New mod icon.
+- Fully localized: English + Spanish (es_ES, names verified against vanilla).
+
 ## 1.4.0 — Nature
 
 Nature update: 7 new generators of living Overworld nature (54 total; the Resin generator needs Minecraft 1.21.4+ and ships only in the 26.2 build). Same content and version number as the Bedrock edition's v1.4.0.
