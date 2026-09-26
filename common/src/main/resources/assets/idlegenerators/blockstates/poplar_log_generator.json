@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "idlegenerators:block/poplar_log_generator_frame" }
+  }
+}
