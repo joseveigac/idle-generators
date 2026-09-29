@@ -2,19 +2,20 @@
 
 **Place a generator and let it work — even while the world is closed.**
 
-Idle Generators adds 56 craftable block-generators that produce resources passively over real time. Close your world, go offline, come back later — the generators track how much time has passed and fill up their internal buffer. When you return, an action-bar HUD shows the current buffer, and you can collect or break the block to retrieve everything that accumulated.
+Idle Generators adds 68 craftable block-generators that produce resources passively over real time. Close your world, go offline, come back later — the generators track how much time has passed and fill up their internal buffer. When you return, an action-bar HUD shows the current buffer, and you can collect or break the block to retrieve everything that accumulated.
 
 ## Features
 
-- **56 generators** — 11 mineral types, 9 wood types, 12 stone & construction types, 16 dye colors and 8 nature types, each with its own production interval and buffer cap (see the table below).
+- **68 generators** — 11 mineral types, 11 wood types, 12 stone & construction types, 16 dye colors, 8 nature types and 10 Nether types, each with its own production interval and buffer cap (see the table below).
 - **Offline production** — generators use real-world timestamps so items accumulate while the game is closed.
 - **Action-bar HUD** — live buffer readout (items stored / cap) updates every tick when you look at a generator.
 - **Collect or break** — right-click to collect without breaking; break the block to get the buffer plus the block itself.
 - **Animated core renderer** — the generator block displays a rotating animated core whose appearance reflects the output type.
 - **Optional Jade support** — look-at tooltip shows buffer status when [Jade](https://modrinth.com/mod/jade) is installed.
 - **Hopper and pipe output** — the buffer is a real inventory: hoppers, droppers and mod pipes can pull from any side. Insertion is blocked; a comparator reads buffer fullness 0–15.
-- **Turn generators off — or take them out of the game** — toggle a whole category (ores / woods / stones / colors / nature) or override any single generator to forced ON / forced OFF. A disabled generator loses its recipe and disappears from the recipe book, the creative tab and the JEI/EMI/REI item list. Generators already placed in the world are never destroyed: they just stop producing and can still be emptied.
+- **Turn generators off — or take them out of the game** — toggle a whole category (ores / woods / stones / colors / nature / nether) or override any single generator to forced ON / forced OFF. A disabled generator loses its recipe and disappears from the recipe book, the creative tab and the JEI/EMI/REI item list. Generators already placed in the world are never destroyed: they just stop producing and can still be emptied.
 - **Cloth Config integration** — in-game config screen for the HUD, a global production speed multiplier, drop-on-break, and the per-generator toggles. On a server, edit `config/idlegenerators.json` and run `/reload` to apply changes without a restart.
+- **Custom recipes**: change any generator recipe in the [online recipe editor](https://joseveigac.github.io/minecraft-tools/idle-generators/recipes/). It builds a small data pack that overrides ours: put it in your world's `datapacks` folder and run `/reload`.
 
 ## Generators
 
@@ -40,6 +41,8 @@ Idle Generators adds 56 craftable block-generators that produce resources passiv
 | Mangrove Log | 5 s | 64 |
 | Cherry Log | 5 s | 64 |
 | Pale Oak Log | 5 s | 64 |
+| Crimson Stem | 5 s | 64 |
+| Warped Stem | 5 s | 64 |
 | Stone | 5 s | 512 |
 | Granite | 5 s | 512 |
 | Diorite | 5 s | 512 |
@@ -76,6 +79,16 @@ Idle Generators adds 56 craftable block-generators that produce resources passiv
 | Big Dripleaf | 10 s | 256 |
 | Flowering Azalea | 10 s | 256 |
 | Resin (resin clumps) | 20 s | 512 |
+| Netherrack | 5 s | 512 |
+| Blackstone | 5 s | 512 |
+| Basalt | 5 s | 512 |
+| Soul Sand | 5 s | 512 |
+| Soul Soil | 5 s | 512 |
+| Magma (magma blocks) | 10 s | 512 |
+| Nether Wart | 10 s | 512 |
+| Glowstone (glowstone dust) | 15 s | 1024 |
+| Wither Rose | 60 s | 256 |
+| Nether Star | 1 h | 8 |
 
 ## Requirements
 
