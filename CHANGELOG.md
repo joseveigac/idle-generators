@@ -2,7 +2,7 @@
 
 ## 1.5.0: Nether (Minecraft 26.3)
 
-Nether update: 13 new generators (69 total). Same content and version number as the Bedrock edition's v1.5.0. This build moves to Minecraft 26.3 (Wilderness Bound); the 26.2 build stays on 1.4.0.
+Nether update: 13 new generators (69 total). Same content and version number as the Bedrock edition's v1.5.0. This build adds Minecraft 26.3 (Wilderness Bound); the 26.2 and 1.21.1 builds get the same update minus the Poplar Log generator.
 
 - **New Nether generators:** Netherrack, Blackstone, Basalt, Soul Sand, Soul Soil, Magma (magma blocks), Nether Wart, Glowstone (glowstone dust), Wither Rose and Nether Star.
 - **New wood generators:** Poplar Log (new in 26.3), plus Crimson Stem and Warped Stem (community request). They use the log recipe; the stems take their fungus in place of the sapling.
