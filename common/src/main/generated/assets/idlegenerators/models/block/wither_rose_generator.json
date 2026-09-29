@@ -1,5 +1,5 @@
 {
-  "parent": "idlegenerators:block/generator_base",
+  "parent": "idlegenerators:block/generator_base_wither_rose",
   "textures": {
     "gen": "idlegenerators:block/wither_rose_generator"
   }
