@@ -40,6 +40,15 @@ public final class GeneratorTypes {
                 product);
     }
 
+    // Nether (v1.5.0): same layout as Nature with obsidian as the fixed pair (the portal).
+    private static GeneratorType nether(String key, Item product, Item source,
+                                        int intervalSeconds, int cap) {
+        return new GeneratorType(key, GeneratorCategory.NETHER, intervalSeconds, cap, product,
+                List.of("GTG", "BDB", "GTG"),
+                Map.of('G', Items.GLASS, 'T', source, 'B', Items.OBSIDIAN, 'D', product),
+                product);
+    }
+
     // Center sample is the BLOCK form of the output (differs from product for dripstone/clay);
     // like the woods, the recipe unlocks on the center block.
     private static GeneratorType stone(String key, int intervalSeconds, int cap, Item product,
@@ -113,6 +122,9 @@ public final class GeneratorTypes {
         wood("cherry_log", Items.CHERRY_LOG, Items.CHERRY_SAPLING),
         // Pale oak is exclusive to MC 26.x (1.21.4+): only present on the 26.2 branch.
         wood("pale_oak_log", Items.PALE_OAK_LOG, Items.PALE_OAK_SAPLING),
+        // v1.5.0: the Nether stems use their fungus as sapling (poplar needs MC 26.3: not on 26.2).
+        wood("crimson_stem", Items.CRIMSON_STEM, Items.CRIMSON_FUNGUS),
+        wood("warped_stem", Items.WARPED_STEM, Items.WARPED_FUNGUS),
         // ── Stone & Construction (12) ──────────────────────────────────
         stone("stone", 5, 512, Items.STONE, Items.FURNACE, Items.COBBLESTONE),
         stone("granite", 5, 512, Items.GRANITE, Items.STONE_PICKAXE, Items.COBBLESTONE),
@@ -154,7 +166,18 @@ public final class GeneratorTypes {
         nature("big_dripleaf", Items.BIG_DRIPLEAF, Items.SMALL_DRIPLEAF, 10, 256),
         nature("flowering_azalea", Items.FLOWERING_AZALEA, Items.AZALEA, 10, 256),
         // Resin only exists since MC 1.21.4: like pale_oak_log, only on the 26.2 branch.
-        nature("resin", Items.RESIN_CLUMP, Items.PALE_OAK_LOG, 20, 512)
+        nature("resin", Items.RESIN_CLUMP, Items.PALE_OAK_LOG, 20, 512),
+        // ── Nether (10): Bedrock v1.5.0 parity, GTG/BDB/GTG with obsidian, tiers ─────
+        nether("netherrack", Items.NETHERRACK, Items.FLINT_AND_STEEL, 5, 512),
+        nether("blackstone", Items.BLACKSTONE, Items.GOLD_INGOT, 5, 512),
+        nether("basalt", Items.BASALT, Items.BLUE_ICE, 5, 512),
+        nether("soul_sand", Items.SOUL_SAND, Items.NETHER_WART, 5, 512),
+        nether("soul_soil", Items.SOUL_SOIL, Items.BONE_BLOCK, 5, 512),
+        nether("magma", Items.MAGMA_BLOCK, Items.MAGMA_CREAM, 10, 512),
+        nether("nether_wart", Items.NETHER_WART, Items.SOUL_SAND, 10, 512),
+        nether("glowstone", Items.GLOWSTONE_DUST, Items.GLOWSTONE, 15, 1024),
+        nether("wither_rose", Items.WITHER_ROSE, Items.SOUL_SAND, 60, 256),
+        nether("nether_star", Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL, 3600, 8)
     );
 
     // Declarado DESPUÉS de ALL a propósito: los campos estáticos se inicializan en orden de
