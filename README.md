@@ -15,7 +15,7 @@ Idle Generators adds 69 craftable block-generators that produce resources passiv
 - **Hopper and pipe output** — the buffer is a real inventory: hoppers, droppers and mod pipes can pull from any side. Insertion is blocked; a comparator reads buffer fullness 0–15.
 - **Turn generators off — or take them out of the game** — toggle a whole category (ores / woods / stones / colors / nature / nether) or override any single generator to forced ON / forced OFF. A disabled generator loses its recipe and disappears from the recipe book, the creative tab and the JEI/EMI/REI item list. Generators already placed in the world are never destroyed: they just stop producing and can still be emptied.
 - **Cloth Config integration** — in-game config screen for the HUD, a global production speed multiplier, drop-on-break, and the per-generator toggles. On a server, edit `config/idlegenerators.json` and run `/reload` to apply changes without a restart.
-- **Custom recipes**: change any generator recipe in the online recipe editor (linked from the mod page). It builds a small data pack that overrides ours: put it in your world's `datapacks` folder and run `/reload`.
+- **Custom recipes**: change any generator recipe in the [online recipe editor](https://joseveigac.github.io/minecraft-tools/idle-generators/recipes/). It builds a small data pack that overrides ours: put it in your world's `datapacks` folder and run `/reload`.
 
 ## Generators
 

@@ -10,7 +10,7 @@ Nether update: 13 new generators (69 total). Same content and version number as 
 - Nether Wart, Wither Rose and Nether Star generators show a 3D model of their item as the spinning core (bigger in the inventory), like on Bedrock. The Cobblestone generator's core now looks like cobblestone instead of stone.
 - Speed tiers: the building blocks every 5 s (cap 512); magma and nether wart every 10 s; glowstone dust every 15 s (cap 1024); wither rose every 60 s (cap 256); Nether Star once per hour, capped at 8.
 - New category toggle **Nether generators enabled** plus the usual per-generator override, with its own dropdown in the config screen.
-- **Custom recipes:** change any generator recipe in the online recipe editor (linked from the mod page). Pick the ingredients on a crafting grid and it downloads a small data pack for your world: put it in the `datapacks` folder and run `/reload`. The config toggles keep working with it.
+- **Custom recipes:** change any generator recipe in the [online recipe editor](https://joseveigac.github.io/minecraft-tools/idle-generators/recipes/). Pick the ingredients on a crafting grid and it downloads a small data pack for your world: put it in the `datapacks` folder and run `/reload`. The config toggles keep working with it.
 - New mod icon.
 - Ported to Minecraft 26.3: Architectury API 22.0.2, Fabric API 0.161.0+26.3, NeoForge 26.3.0.22-beta, Cloth Config 26.3.159.
 - Fully localized: English + Spanish (es_ES, names verified against vanilla).
